@@ -7,20 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <opencv2/videoio/cap_ios.h>
 
-@class SPCarouselViewController;
+@class SPCarouselViewController, CvVideoCamera;
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface SPCameraView : UIView
 
-@property (nonatomic, weak) UILabel *promptLabel;
+@property (nonatomic, strong, readonly) CvVideoCamera *camera;
+@property (nonatomic, weak, readonly) UIImageView *cameraContainerView;
 
-@property (nonatomic, strong) CvVideoCamera *camera;
-@property (nonatomic, weak) UIImageView *cameraContainerView;
-
-@property (nonatomic, weak) UIButton *cameraButton;
-@property (nonatomic, weak) UIButton *switchCameraButton;
-
-@property (nonatomic, strong) SPCarouselViewController *effectsCarousel;
+@property (nonatomic, weak, readonly) UIView *controlsView;
+@property (nonatomic, weak, readonly) UILabel *promptLabel;
+@property (nonatomic, weak, readonly) UIButton *cameraButton;
+@property (nonatomic, weak, readonly) UIButton *switchCameraButton;
+@property (nonatomic, weak, readonly) UIVisualEffectView *effectView;
+@property (nonatomic, strong, readonly) SPCarouselViewController *effectsCarousel;
 
 @end
+
+NS_ASSUME_NONNULL_END

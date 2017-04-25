@@ -73,8 +73,8 @@ static NSString *const SPCarouselViewCellIdentifier = @"SPCarouselViewCellIdenti
         NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:oldSelectedSegmentIndex inSection:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:selectedSegmentIndex inSection:0];
         
-        if ([_delegate respondsToSelector:@selector(carouselView:didSelectItemAtIndex:)]) {
-            [_delegate carouselView:self didSelectItemAtIndex:indexPath.row];
+        if ([_carouselDelegate respondsToSelector:@selector(carouselView:didSelectItemAtIndex:)]) {
+            [_carouselDelegate carouselView:self didSelectItemAtIndex:indexPath.row];
         }
         
         SPCarouselViewCell *oldSelectedCell = (SPCarouselViewCell *)[self.collectionView cellForItemAtIndexPath:oldIndexPath];
@@ -119,8 +119,8 @@ static NSString *const SPCarouselViewCellIdentifier = @"SPCarouselViewCellIdenti
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if ([_dataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)]) {
-        return [_dataSource numberOfItemsInCarouselView:self];
+    if ([_carouselDataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)]) {
+        return [_carouselDataSource numberOfItemsInCarouselView:self];
     }
     
     return 0;
@@ -129,8 +129,8 @@ static NSString *const SPCarouselViewCellIdentifier = @"SPCarouselViewCellIdenti
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SPCarouselViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SPCarouselViewCellIdentifier forIndexPath:indexPath];
     
-    if ([_dataSource respondsToSelector:@selector(carouselView:titleForItemAtIndex:)]) {
-        NSString *title = [_dataSource carouselView:self titleForItemAtIndex:indexPath.row];
+    if ([_carouselDataSource respondsToSelector:@selector(carouselView:titleForItemAtIndex:)]) {
+        NSString *title = [_carouselDataSource carouselView:self titleForItemAtIndex:indexPath.row];
         cell.titleLabel.text = title;
     }
     

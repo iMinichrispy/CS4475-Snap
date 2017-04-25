@@ -21,12 +21,15 @@
 		FA0F01A01EAEF6F200BB4F9F /* SPObjectDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */; };
 		FA0F01A31EAEF79500BB4F9F /* ObjectTrackingClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A11EAEF79500BB4F9F /* ObjectTrackingClass.cpp */; };
 		FA0F01A71EAF24CA00BB4F9F /* SPCameraView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A61EAF24CA00BB4F9F /* SPCameraView.mm */; };
+		FA0F01AA1EAF2FD000BB4F9F /* SPShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A91EAF2FD000BB4F9F /* SPShareViewController.m */; };
 		FA3F54CD1EA92CC100B5D692 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CC1EA92CC100B5D692 /* main.m */; };
 		FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */; };
 		FA3F54D81EA92CC100B5D692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3F54D71EA92CC100B5D692 /* Assets.xcassets */; };
 		FA3F54DB1EA92CC100B5D692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3F54D91EA92CC100B5D692 /* LaunchScreen.storyboard */; };
 		FA3F54E41EA92D2A00B5D692 /* SPHomeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */; };
 		FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54E61EA936D000B5D692 /* SPCameraButton.m */; };
+		FAF072291EAF9B29004060F7 /* SPShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF072281EAF9B29004060F7 /* SPShareView.m */; };
+		FAF0722C1EAFA862004060F7 /* UIImage+SPCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */; };
 		FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */; };
 		FAF6EEC01EAE59BE0004EA7B /* SPEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEBF1EAE59BE0004EA7B /* SPEffect.mm */; };
 		FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEC31EAE5A6D0004EA7B /* SPInvertEffect.mm */; };
@@ -65,6 +68,8 @@
 		FA0F01A21EAEF79500BB4F9F /* ObjectTrackingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectTrackingClass.h; sourceTree = "<group>"; };
 		FA0F01A51EAF24CA00BB4F9F /* SPCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCameraView.h; sourceTree = "<group>"; };
 		FA0F01A61EAF24CA00BB4F9F /* SPCameraView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPCameraView.mm; sourceTree = "<group>"; };
+		FA0F01A81EAF2FD000BB4F9F /* SPShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShareViewController.h; sourceTree = "<group>"; };
+		FA0F01A91EAF2FD000BB4F9F /* SPShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPShareViewController.m; sourceTree = "<group>"; };
 		FA3F54C81EA92CC100B5D692 /* Snap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3F54CC1EA92CC100B5D692 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA3F54CE1EA92CC100B5D692 /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +81,10 @@
 		FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPHomeViewController.mm; sourceTree = "<group>"; };
 		FA3F54E51EA936D000B5D692 /* SPCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCameraButton.h; sourceTree = "<group>"; };
 		FA3F54E61EA936D000B5D692 /* SPCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCameraButton.m; sourceTree = "<group>"; };
+		FAF072271EAF9B29004060F7 /* SPShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShareView.h; sourceTree = "<group>"; };
+		FAF072281EAF9B29004060F7 /* SPShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPShareView.m; sourceTree = "<group>"; };
+		FAF0722A1EAFA862004060F7 /* UIImage+SPCrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPCrop.h"; sourceTree = "<group>"; };
+		FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPCrop.m"; sourceTree = "<group>"; };
 		FAF6EEBB1EAE58C50004EA7B /* SPOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOpenCVHelper.h; sourceTree = "<group>"; };
 		FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPOpenCVHelper.mm; sourceTree = "<group>"; };
 		FAF6EEBE1EAE59BE0004EA7B /* SPEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEffect.h; sourceTree = "<group>"; };
@@ -143,6 +152,17 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		FA0F01AB1EAF312400BB4F9F /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				FAF072271EAF9B29004060F7 /* SPShareView.h */,
+				FAF072281EAF9B29004060F7 /* SPShareView.m */,
+				FA0F01A81EAF2FD000BB4F9F /* SPShareViewController.h */,
+				FA0F01A91EAF2FD000BB4F9F /* SPShareViewController.m */,
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
 		FA3F54BF1EA92CC100B5D692 = {
 			isa = PBXGroup;
 			children = (
@@ -168,10 +188,13 @@
 				FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */,
 				FA3F54E21EA92D2A00B5D692 /* SPHomeViewController.h */,
 				FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */,
+				FA0F01AB1EAF312400BB4F9F /* Share */,
 				FA98DDB41EAEB19800C416A3 /* Views */,
 				FAF6EEC11EAE5A5B0004EA7B /* Effects */,
 				FAF6EEBB1EAE58C50004EA7B /* SPOpenCVHelper.h */,
 				FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */,
+				FAF0722A1EAFA862004060F7 /* UIImage+SPCrop.h */,
+				FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */,
 				FA0F01A41EAEF79A00BB4F9F /* Other */,
 				FA3F54CB1EA92CC100B5D692 /* Supporting Files */,
 			);
@@ -355,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF0722C1EAFA862004060F7 /* UIImage+SPCrop.m in Sources */,
 				FA3F54E41EA92D2A00B5D692 /* SPHomeViewController.mm in Sources */,
 				FA0F01911EAEECCB00BB4F9F /* SPEdgeDetection.mm in Sources */,
 				FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */,
@@ -362,6 +386,7 @@
 				FA3F54CD1EA92CC100B5D692 /* main.m in Sources */,
 				FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */,
 				FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */,
+				FA0F01AA1EAF2FD000BB4F9F /* SPShareViewController.m in Sources */,
 				FA0F01A71EAF24CA00BB4F9F /* SPCameraView.mm in Sources */,
 				FA052F081EAEBD61006E5FAA /* SPCarouselViewController.m in Sources */,
 				FAF6EEC01EAE59BE0004EA7B /* SPEffect.mm in Sources */,
@@ -369,6 +394,7 @@
 				FA0F01971EAEF28E00BB4F9F /* SPEyeDetection.mm in Sources */,
 				FAF6EEC71EAE5D7F0004EA7B /* SPTextEffect.mm in Sources */,
 				FA052F0E1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m in Sources */,
+				FAF072291EAF9B29004060F7 /* SPShareView.m in Sources */,
 				FA0F019D1EAEF4B700BB4F9F /* SPFeatureDetection.mm in Sources */,
 				FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */,
 				FAF6EECD1EAE64830004EA7B /* SPNormalEffect.mm in Sources */,

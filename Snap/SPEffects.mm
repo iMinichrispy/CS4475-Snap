@@ -21,7 +21,7 @@
 
 @implementation SPEffects
 
-static NSArray<Class> *__effectsClasses = @[[SPInvertEffect class], [SPSepiaEffect class], [SPEdgeDetection class], [SPContourDetection class], [SPFeatureDetection class], [SPObjectDetection class], [SPEyeDetection class], [SPTextEffect class], [SPNormalEffect class]];
+static NSArray<Class> *__effectsClasses = @[[SPNormalEffect class], [SPInvertEffect class], [SPSepiaEffect class], [SPEdgeDetection class], [SPContourDetection class], [SPFeatureDetection class], [SPObjectDetection class], [SPEyeDetection class]];
 
 #pragma mark - Getters
 

@@ -17,9 +17,9 @@ void getGray(const cv::Mat& input, cv::Mat& gray);
 
 @interface SPOpenCVHelper : NSObject
 
-- (cv::Mat)cvMatFromUIImage:(UIImage *)image;
-- (cv::Mat)cvMatGrayFromUIImage:(UIImage *)image;
++ (cv::Mat)cvMatFromUIImage:(UIImage *)image;
++ (cv::Mat)cvMatGrayFromUIImage:(UIImage *)image;
 
-- (UIImage *)UIImageFromCVMat:(cv::Mat)cvMat;
++ (UIImage *)UIImageFromCVMat:(cv::Mat)cvMat;
 
 @end

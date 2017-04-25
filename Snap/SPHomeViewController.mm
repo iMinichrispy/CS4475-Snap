@@ -8,16 +8,18 @@
 
 #import "SPHomeViewController.h"
 
+#import <Masonry/Masonry.h>
 #import <opencv2/videoio/cap_ios.h>
 
 #import "SPEffect.h"
 #import "SPEffects.h"
-
 #import "SPFont.h"
 #import "SPCameraView.h"
 #import "SPCarouselViewController.h"
+#import "SPShareViewController.h"
+#import "SPOpenCVHelper.h"
 
-@interface SPHomeViewController () <SPCarouselViewControllerDataSource, SPCarouselViewControllerDelegate, CvVideoCameraDelegate>
+@interface SPHomeViewController () <SPCarouselViewControllerDataSource, SPCarouselViewControllerDelegate, CvVideoCameraDelegate, UIGestureRecognizerDelegate, SPShareViewControllerDelegate>
 
 @property (nonatomic, weak) SPCameraView *cameraView;
 @property (nonatomic, assign) NSInteger currentEffectIndex;
@@ -26,19 +28,29 @@
 @end
 
 @implementation SPHomeViewController {
-    cv::Mat outputFrame;
+    cv::Mat _outputFrame;
+    SPEffect *_previousEffect;
 }
 
-static NSInteger const SPStartingEffectIndex = 2;
+static NSInteger const SPStartingEffectIndex = 3;
 
 #pragma mark - Setters
 
 - (void)setCurrentEffectIndex:(NSInteger)currentEffectIndex {
     if (_currentEffectIndex != currentEffectIndex) {
         _currentEffectIndex = currentEffectIndex;
-        _cameraView.camera.delegate = self;
-        _cameraView.effectsCarousel.selectedSegmentIndex = _currentEffectIndex;
         SPEffect *currentEffect = self.effects[currentEffectIndex];
+        
+        if ([_previousEffect respondsToSelector:@selector(effectDidEnd:)]) {
+            [_previousEffect effectDidEnd:_previousEffect];
+        }
+        
+        if ([currentEffect respondsToSelector:@selector(effectDidStart:)]) {
+            [currentEffect effectDidStart:currentEffect];
+        }
+        _previousEffect = currentEffect;
+        
+        _cameraView.effectsCarousel.selectedSegmentIndex = _currentEffectIndex;
         _cameraView.promptLabel.text = currentEffect.prompt.uppercaseString;
         _cameraView.promptLabel.hidden = NO;
     }
@@ -53,8 +65,9 @@ static NSInteger const SPStartingEffectIndex = 2;
     
     SPCameraView *cameraView = ({
         SPCameraView *view = [[SPCameraView alloc] initWithFrame:self.view.bounds];
-        view.effectsCarousel.delegate = self;
-        view.effectsCarousel.dataSource = self;
+        view.camera.delegate = self;
+        view.effectsCarousel.carouselDelegate = self;
+        view.effectsCarousel.carouselDataSource = self;
         [view.cameraButton addTarget:self action:@selector(takePhoto:) forControlEvents:UIControlEventTouchUpInside];
         [view.switchCameraButton addTarget:self action:@selector(switchCamera:) forControlEvents:UIControlEventTouchUpInside];
         view;
@@ -63,6 +76,7 @@ static NSInteger const SPStartingEffectIndex = 2;
     _cameraView = cameraView;
     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
+    tapRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapRecognizer];
     
     UISwipeGestureRecognizer *leftSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
@@ -88,9 +102,8 @@ static NSInteger const SPStartingEffectIndex = 2;
 - (void)didTap:(UITapGestureRecognizer *)recognizer {
     SPEffect *currentEffect = self.effects[self.currentEffectIndex];
     if ([currentEffect respondsToSelector:@selector(effect:handleTouchReferenceFrame:)]) {
-        [currentEffect effect:currentEffect handleTouchReferenceFrame:outputFrame];
+        [currentEffect effect:currentEffect handleTouchReferenceFrame:_outputFrame];
     }
-    
     _cameraView.promptLabel.hidden = YES;
 }
 
@@ -117,7 +130,7 @@ static NSInteger const SPStartingEffectIndex = 2;
 #pragma mark - SPCarouselViewControllerDelegate
 
 - (void)carouselView:(SPCarouselViewController *)carouselView didSelectItemAtIndex:(NSUInteger)index {
-    self.currentEffectIndex = index;
+//    self.currentEffectIndex = index;
 }
 
 #pragma mark - CvVideoCameraDelegate
@@ -126,18 +139,41 @@ static NSInteger const SPStartingEffectIndex = 2;
     SPEffect *currentEffect = self.effects[self.currentEffectIndex];
     [currentEffect effect:currentEffect processImage:image];
     
-    image.copyTo(outputFrame);
+    image.copyTo(_outputFrame);
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    UIView *carouselView = _cameraView.effectsCarousel.view;
+    if (CGRectContainsPoint(carouselView.bounds, [touch locationInView:carouselView])) {
+        return NO;
+    }
+    return YES;
+}
+
+#pragma mark - SPShareViewControllerDelegate
+
+- (void)shareViewController:(SPShareViewController *)shareViewController didFinishWithResult:(SPShareResult)result {
+    [shareViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Actions
 
 - (void)takePhoto:(UIButton *)sender {
-    UIGraphicsBeginImageContext(_cameraView.cameraContainerView.frame.size);
-    [_cameraView.cameraContainerView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
-    _cameraView.cameraContainerView.image = screenshot;
-//    [_camera stop];
-    UIGraphicsEndImageContext();
+    UIImage *image = [SPOpenCVHelper UIImageFromCVMat:_outputFrame];
+    SPEffect *currentEffect = self.effects[_currentEffectIndex];
+    if ([currentEffect respondsToSelector:@selector(effect:imageForImage:)]) {
+        image = [currentEffect effect:currentEffect imageForImage:image];
+    }
+    
+    if (image) {
+        _cameraView.promptLabel.hidden = YES;
+        
+        SPShareViewController *shareViewController = [[SPShareViewController alloc] initWithImage:image];
+        shareViewController.delegate = self;
+        [self presentViewController:shareViewController animated:YES completion:nil];
+    }
 }
 
 - (void)switchCamera:(UIButton *)sender {

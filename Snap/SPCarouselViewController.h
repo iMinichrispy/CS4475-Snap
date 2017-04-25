@@ -26,8 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SPCarouselViewController : UICollectionViewController
 
-@property (nonatomic, weak, nullable) id<SPCarouselViewControllerDataSource> dataSource;
-@property (nonatomic, weak, nullable) id<SPCarouselViewControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id<SPCarouselViewControllerDataSource> carouselDataSource;
+@property (nonatomic, weak, nullable) id<SPCarouselViewControllerDelegate> carouselDelegate;
 
 @property (nonatomic) NSInteger selectedSegmentIndex;
 

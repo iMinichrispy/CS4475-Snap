@@ -11,10 +11,6 @@
 #include "ObjectTrackingClass.h"
 #import "SPOpenCVHelper.h"
 
-bool computeObject = false;
-bool detectObject = false;
-bool trackObject = false;
-
 @implementation SPObjectDetection {
     cv::Mat imageNext, imagePrev;
     
@@ -28,6 +24,10 @@ bool trackObject = false;
     
     // optical flow options
     int m_maxCorners;
+    
+    bool computeObject;
+    bool detectObject;
+    bool trackObject;
 }
 
 - (instancetype)init {
@@ -50,6 +50,12 @@ bool trackObject = false;
 - (void)effect:(SPEffect *)effect handleTouchReferenceFrame:(const cv::Mat&)reference {
     getGray(reference, imagePrev);
     computeObject = true;
+}
+
+- (void)effectDidEnd:(SPEffect *)effect {
+    computeObject = false;
+    detectObject = false;
+    trackObject = false;
 }
 
 - (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {

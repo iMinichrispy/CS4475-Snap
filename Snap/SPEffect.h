@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (void)effect:(SPEffect *)effect handleTouchReferenceFrame:(const cv::Mat&)reference;
+- (void)effectDidStart:(SPEffect *)effect;
+- (void)effectDidEnd:(SPEffect *)effect;
+- (UIImage *)effect:(SPEffect *)effect imageForImage:(UIImage *)image;
 
 @end
 
