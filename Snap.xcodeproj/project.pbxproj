@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0298EB98AD4A844606CC574 /* Pods_Snap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F285E982EF619F61AA4DEA /* Pods_Snap.framework */; };
+		FA052F081EAEBD61006E5FAA /* SPCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052F071EAEBD61006E5FAA /* SPCarouselViewController.m */; };
+		FA052F0B1EAEBD7B006E5FAA /* SPCarouselViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052F0A1EAEBD7B006E5FAA /* SPCarouselViewCell.m */; };
+		FA052F0E1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052F0D1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m */; };
+		FA052F111EAEC5A2006E5FAA /* SPEffects.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA052F101EAEC5A2006E5FAA /* SPEffects.mm */; };
+		FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */; };
+		FA0F01911EAEECCB00BB4F9F /* SPEdgeDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01901EAEECCB00BB4F9F /* SPEdgeDetection.mm */; };
+		FA0F01941EAEEDC200BB4F9F /* cvneon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01921EAEEDC200BB4F9F /* cvneon.cpp */; };
+		FA0F01971EAEF28E00BB4F9F /* SPEyeDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */; };
+		FA0F019A1EAEF30A00BB4F9F /* SPContourDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01991EAEF30A00BB4F9F /* SPContourDetection.mm */; };
+		FA0F019D1EAEF4B700BB4F9F /* SPFeatureDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F019C1EAEF4B700BB4F9F /* SPFeatureDetection.mm */; };
+		FA0F01A01EAEF6F200BB4F9F /* SPObjectDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */; };
+		FA0F01A31EAEF79500BB4F9F /* ObjectTrackingClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A11EAEF79500BB4F9F /* ObjectTrackingClass.cpp */; };
+		FA0F01A71EAF24CA00BB4F9F /* SPCameraView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A61EAF24CA00BB4F9F /* SPCameraView.mm */; };
+		FA3F54CD1EA92CC100B5D692 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CC1EA92CC100B5D692 /* main.m */; };
+		FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */; };
+		FA3F54D81EA92CC100B5D692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3F54D71EA92CC100B5D692 /* Assets.xcassets */; };
+		FA3F54DB1EA92CC100B5D692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3F54D91EA92CC100B5D692 /* LaunchScreen.storyboard */; };
+		FA3F54E41EA92D2A00B5D692 /* SPHomeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */; };
+		FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54E61EA936D000B5D692 /* SPCameraButton.m */; };
+		FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */; };
+		FAF6EEC01EAE59BE0004EA7B /* SPEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEBF1EAE59BE0004EA7B /* SPEffect.mm */; };
+		FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEC31EAE5A6D0004EA7B /* SPInvertEffect.mm */; };
+		FAF6EEC71EAE5D7F0004EA7B /* SPTextEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEC61EAE5D7F0004EA7B /* SPTextEffect.mm */; };
+		FAF6EECA1EAE5FF20004EA7B /* SPFont.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEC91EAE5FF20004EA7B /* SPFont.m */; };
+		FAF6EECD1EAE64830004EA7B /* SPNormalEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EECC1EAE64830004EA7B /* SPNormalEffect.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		931F5FB7B930F0F0E46EDD1D /* Pods-Snap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snap/Pods-Snap.release.xcconfig"; sourceTree = "<group>"; };
+		D5F285E982EF619F61AA4DEA /* Pods_Snap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DC0D2FDEC7C7EF42DFD525 /* Pods-Snap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snap/Pods-Snap.debug.xcconfig"; sourceTree = "<group>"; };
+		FA052F061EAEBD61006E5FAA /* SPCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCarouselViewController.h; sourceTree = "<group>"; };
+		FA052F071EAEBD61006E5FAA /* SPCarouselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCarouselViewController.m; sourceTree = "<group>"; };
+		FA052F091EAEBD7B006E5FAA /* SPCarouselViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCarouselViewCell.h; sourceTree = "<group>"; };
+		FA052F0A1EAEBD7B006E5FAA /* SPCarouselViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCarouselViewCell.m; sourceTree = "<group>"; };
+		FA052F0C1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCarouselViewFlowLayout.h; sourceTree = "<group>"; };
+		FA052F0D1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCarouselViewFlowLayout.m; sourceTree = "<group>"; };
+		FA052F0F1EAEC5A2006E5FAA /* SPEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEffects.h; sourceTree = "<group>"; };
+		FA052F101EAEC5A2006E5FAA /* SPEffects.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEffects.mm; sourceTree = "<group>"; };
+		FA0F01891EAEE7DE00BB4F9F /* SPSepiaEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSepiaEffect.h; sourceTree = "<group>"; };
+		FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPSepiaEffect.mm; sourceTree = "<group>"; };
+		FA0F018F1EAEECCB00BB4F9F /* SPEdgeDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEdgeDetection.h; sourceTree = "<group>"; };
+		FA0F01901EAEECCB00BB4F9F /* SPEdgeDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEdgeDetection.mm; sourceTree = "<group>"; };
+		FA0F01921EAEEDC200BB4F9F /* cvneon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cvneon.cpp; sourceTree = "<group>"; };
+		FA0F01931EAEEDC200BB4F9F /* cvneon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvneon.h; sourceTree = "<group>"; };
+		FA0F01951EAEF28E00BB4F9F /* SPEyeDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEyeDetection.h; sourceTree = "<group>"; };
+		FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEyeDetection.mm; sourceTree = "<group>"; };
+		FA0F01981EAEF30A00BB4F9F /* SPContourDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPContourDetection.h; sourceTree = "<group>"; };
+		FA0F01991EAEF30A00BB4F9F /* SPContourDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPContourDetection.mm; sourceTree = "<group>"; };
+		FA0F019B1EAEF4B700BB4F9F /* SPFeatureDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFeatureDetection.h; sourceTree = "<group>"; };
+		FA0F019C1EAEF4B700BB4F9F /* SPFeatureDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPFeatureDetection.mm; sourceTree = "<group>"; };
+		FA0F019E1EAEF6F200BB4F9F /* SPObjectDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPObjectDetection.h; sourceTree = "<group>"; };
+		FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPObjectDetection.mm; sourceTree = "<group>"; };
+		FA0F01A11EAEF79500BB4F9F /* ObjectTrackingClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectTrackingClass.cpp; sourceTree = "<group>"; };
+		FA0F01A21EAEF79500BB4F9F /* ObjectTrackingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectTrackingClass.h; sourceTree = "<group>"; };
+		FA0F01A51EAF24CA00BB4F9F /* SPCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCameraView.h; sourceTree = "<group>"; };
+		FA0F01A61EAF24CA00BB4F9F /* SPCameraView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPCameraView.mm; sourceTree = "<group>"; };
+		FA3F54C81EA92CC100B5D692 /* Snap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3F54CC1EA92CC100B5D692 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA3F54CE1EA92CC100B5D692 /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
+		FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAppDelegate.m; sourceTree = "<group>"; };
+		FA3F54D71EA92CC100B5D692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA3F54DA1EA92CC100B5D692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA3F54DC1EA92CC100B5D692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA3F54E21EA92D2A00B5D692 /* SPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHomeViewController.h; sourceTree = "<group>"; };
+		FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPHomeViewController.mm; sourceTree = "<group>"; };
+		FA3F54E51EA936D000B5D692 /* SPCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCameraButton.h; sourceTree = "<group>"; };
+		FA3F54E61EA936D000B5D692 /* SPCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCameraButton.m; sourceTree = "<group>"; };
+		FAF6EEBB1EAE58C50004EA7B /* SPOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOpenCVHelper.h; sourceTree = "<group>"; };
+		FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPOpenCVHelper.mm; sourceTree = "<group>"; };
+		FAF6EEBE1EAE59BE0004EA7B /* SPEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEffect.h; sourceTree = "<group>"; };
+		FAF6EEBF1EAE59BE0004EA7B /* SPEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEffect.mm; sourceTree = "<group>"; };
+		FAF6EEC21EAE5A6D0004EA7B /* SPInvertEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPInvertEffect.h; sourceTree = "<group>"; };
+		FAF6EEC31EAE5A6D0004EA7B /* SPInvertEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPInvertEffect.mm; sourceTree = "<group>"; };
+		FAF6EEC51EAE5D7F0004EA7B /* SPTextEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTextEffect.h; sourceTree = "<group>"; };
+		FAF6EEC61EAE5D7F0004EA7B /* SPTextEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPTextEffect.mm; sourceTree = "<group>"; };
+		FAF6EEC81EAE5FF20004EA7B /* SPFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFont.h; sourceTree = "<group>"; };
+		FAF6EEC91EAE5FF20004EA7B /* SPFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFont.m; sourceTree = "<group>"; };
+		FAF6EECB1EAE64830004EA7B /* SPNormalEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNormalEffect.h; sourceTree = "<group>"; };
+		FAF6EECC1EAE64830004EA7B /* SPNormalEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPNormalEffect.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA3F54C51EA92CC100B5D692 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0298EB98AD4A844606CC574 /* Pods_Snap.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1912C54786C9AB32CE2A9F14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5F285E982EF619F61AA4DEA /* Pods_Snap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C2E57C3713665F8EB6345A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8DC0D2FDEC7C7EF42DFD525 /* Pods-Snap.debug.xcconfig */,
+				931F5FB7B930F0F0E46EDD1D /* Pods-Snap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA0F01821EAEC88800BB4F9F /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				FA052F091EAEBD7B006E5FAA /* SPCarouselViewCell.h */,
+				FA052F0A1EAEBD7B006E5FAA /* SPCarouselViewCell.m */,
+				FA052F0C1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.h */,
+				FA052F0D1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m */,
+				FA052F061EAEBD61006E5FAA /* SPCarouselViewController.h */,
+				FA052F071EAEBD61006E5FAA /* SPCarouselViewController.m */,
+			);
+			name = Carousel;
+			sourceTree = "<group>";
+		};
+		FA0F01A41EAEF79A00BB4F9F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				FA0F01931EAEEDC200BB4F9F /* cvneon.h */,
+				FA0F01921EAEEDC200BB4F9F /* cvneon.cpp */,
+				FA0F01A11EAEF79500BB4F9F /* ObjectTrackingClass.cpp */,
+				FA0F01A21EAEF79500BB4F9F /* ObjectTrackingClass.h */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		FA3F54BF1EA92CC100B5D692 = {
+			isa = PBXGroup;
+			children = (
+				FA3F54CA1EA92CC100B5D692 /* Snap */,
+				FA3F54C91EA92CC100B5D692 /* Products */,
+				5C2E57C3713665F8EB6345A2 /* Pods */,
+				1912C54786C9AB32CE2A9F14 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA3F54C91EA92CC100B5D692 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA3F54C81EA92CC100B5D692 /* Snap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA3F54CA1EA92CC100B5D692 /* Snap */ = {
+			isa = PBXGroup;
+			children = (
+				FA3F54CE1EA92CC100B5D692 /* SPAppDelegate.h */,
+				FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */,
+				FA3F54E21EA92D2A00B5D692 /* SPHomeViewController.h */,
+				FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */,
+				FA98DDB41EAEB19800C416A3 /* Views */,
+				FAF6EEC11EAE5A5B0004EA7B /* Effects */,
+				FAF6EEBB1EAE58C50004EA7B /* SPOpenCVHelper.h */,
+				FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */,
+				FA0F01A41EAEF79A00BB4F9F /* Other */,
+				FA3F54CB1EA92CC100B5D692 /* Supporting Files */,
+			);
+			path = Snap;
+			sourceTree = "<group>";
+		};
+		FA3F54CB1EA92CC100B5D692 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA3F54D71EA92CC100B5D692 /* Assets.xcassets */,
+				FA3F54D91EA92CC100B5D692 /* LaunchScreen.storyboard */,
+				FA3F54DC1EA92CC100B5D692 /* Info.plist */,
+				FA3F54CC1EA92CC100B5D692 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA98DDB41EAEB19800C416A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAF6EEC81EAE5FF20004EA7B /* SPFont.h */,
+				FAF6EEC91EAE5FF20004EA7B /* SPFont.m */,
+				FA3F54E51EA936D000B5D692 /* SPCameraButton.h */,
+				FA3F54E61EA936D000B5D692 /* SPCameraButton.m */,
+				FA0F01A51EAF24CA00BB4F9F /* SPCameraView.h */,
+				FA0F01A61EAF24CA00BB4F9F /* SPCameraView.mm */,
+				FA0F01821EAEC88800BB4F9F /* Carousel */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FAF6EEC11EAE5A5B0004EA7B /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				FA052F0F1EAEC5A2006E5FAA /* SPEffects.h */,
+				FA052F101EAEC5A2006E5FAA /* SPEffects.mm */,
+				FAF6EEBE1EAE59BE0004EA7B /* SPEffect.h */,
+				FAF6EEBF1EAE59BE0004EA7B /* SPEffect.mm */,
+				FAF6EECB1EAE64830004EA7B /* SPNormalEffect.h */,
+				FAF6EECC1EAE64830004EA7B /* SPNormalEffect.mm */,
+				FAF6EEC21EAE5A6D0004EA7B /* SPInvertEffect.h */,
+				FAF6EEC31EAE5A6D0004EA7B /* SPInvertEffect.mm */,
+				FAF6EEC51EAE5D7F0004EA7B /* SPTextEffect.h */,
+				FAF6EEC61EAE5D7F0004EA7B /* SPTextEffect.mm */,
+				FA0F01891EAEE7DE00BB4F9F /* SPSepiaEffect.h */,
+				FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */,
+				FA0F018F1EAEECCB00BB4F9F /* SPEdgeDetection.h */,
+				FA0F01901EAEECCB00BB4F9F /* SPEdgeDetection.mm */,
+				FA0F01981EAEF30A00BB4F9F /* SPContourDetection.h */,
+				FA0F01991EAEF30A00BB4F9F /* SPContourDetection.mm */,
+				FA0F01951EAEF28E00BB4F9F /* SPEyeDetection.h */,
+				FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */,
+				FA0F019B1EAEF4B700BB4F9F /* SPFeatureDetection.h */,
+				FA0F019C1EAEF4B700BB4F9F /* SPFeatureDetection.mm */,
+				FA0F019E1EAEF6F200BB4F9F /* SPObjectDetection.h */,
+				FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */,
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA3F54C71EA92CC100B5D692 /* Snap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA3F54DF1EA92CC100B5D692 /* Build configuration list for PBXNativeTarget "Snap" */;
+			buildPhases = (
+				80E86012699DADF9B7131F84 /* [CP] Check Pods Manifest.lock */,
+				FA3F54C41EA92CC100B5D692 /* Sources */,
+				FA3F54C51EA92CC100B5D692 /* Frameworks */,
+				FA3F54C61EA92CC100B5D692 /* Resources */,
+				9A4F6F188D3BA4A145EBD9C1 /* [CP] Embed Pods Frameworks */,
+				76F27937073D30AC80C83D8F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Snap;
+			productName = Snap;
+			productReference = FA3F54C81EA92CC100B5D692 /* Snap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA3F54C01EA92CC100B5D692 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SP;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Alex Perez";
+				TargetAttributes = {
+					FA3F54C71EA92CC100B5D692 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 3M2F493L45;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FA3F54C31EA92CC100B5D692 /* Build configuration list for PBXProject "Snap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA3F54BF1EA92CC100B5D692;
+			productRefGroup = FA3F54C91EA92CC100B5D692 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA3F54C71EA92CC100B5D692 /* Snap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA3F54C61EA92CC100B5D692 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3F54DB1EA92CC100B5D692 /* LaunchScreen.storyboard in Resources */,
+				FA3F54D81EA92CC100B5D692 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76F27937073D30AC80C83D8F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snap/Pods-Snap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80E86012699DADF9B7131F84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9A4F6F188D3BA4A145EBD9C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snap/Pods-Snap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA3F54C41EA92CC100B5D692 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3F54E41EA92D2A00B5D692 /* SPHomeViewController.mm in Sources */,
+				FA0F01911EAEECCB00BB4F9F /* SPEdgeDetection.mm in Sources */,
+				FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */,
+				FA052F0B1EAEBD7B006E5FAA /* SPCarouselViewCell.m in Sources */,
+				FA3F54CD1EA92CC100B5D692 /* main.m in Sources */,
+				FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */,
+				FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */,
+				FA0F01A71EAF24CA00BB4F9F /* SPCameraView.mm in Sources */,
+				FA052F081EAEBD61006E5FAA /* SPCarouselViewController.m in Sources */,
+				FAF6EEC01EAE59BE0004EA7B /* SPEffect.mm in Sources */,
+				FA052F111EAEC5A2006E5FAA /* SPEffects.mm in Sources */,
+				FA0F01971EAEF28E00BB4F9F /* SPEyeDetection.mm in Sources */,
+				FAF6EEC71EAE5D7F0004EA7B /* SPTextEffect.mm in Sources */,
+				FA052F0E1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m in Sources */,
+				FA0F019D1EAEF4B700BB4F9F /* SPFeatureDetection.mm in Sources */,
+				FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */,
+				FAF6EECD1EAE64830004EA7B /* SPNormalEffect.mm in Sources */,
+				FA0F019A1EAEF30A00BB4F9F /* SPContourDetection.mm in Sources */,
+				FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */,
+				FA0F01941EAEEDC200BB4F9F /* cvneon.cpp in Sources */,
+				FAF6EECA1EAE5FF20004EA7B /* SPFont.m in Sources */,
+				FA0F01A31EAEF79500BB4F9F /* ObjectTrackingClass.cpp in Sources */,
+				FA0F01A01EAEF6F200BB4F9F /* SPObjectDetection.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA3F54D91EA92CC100B5D692 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA3F54DA1EA92CC100B5D692 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA3F54DD1EA92CC100B5D692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA3F54DE1EA92CC100B5D692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA3F54E01EA92CC100B5D692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8DC0D2FDEC7C7EF42DFD525 /* Pods-Snap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				DEVELOPMENT_TEAM = 3M2F493L45;
+				INFOPLIST_FILE = Snap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexperez.Snap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA3F54E11EA92CC100B5D692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 931F5FB7B930F0F0E46EDD1D /* Pods-Snap.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				DEVELOPMENT_TEAM = 3M2F493L45;
+				INFOPLIST_FILE = Snap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexperez.Snap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA3F54C31EA92CC100B5D692 /* Build configuration list for PBXProject "Snap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3F54DD1EA92CC100B5D692 /* Debug */,
+				FA3F54DE1EA92CC100B5D692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA3F54DF1EA92CC100B5D692 /* Build configuration list for PBXNativeTarget "Snap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3F54E01EA92CC100B5D692 /* Debug */,
+				FA3F54E11EA92CC100B5D692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA3F54C01EA92CC100B5D692 /* Project object */;
+}
