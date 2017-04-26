@@ -8,17 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class SPCarouselViewController, CvVideoCamera;
+@class SPCarouselViewController, SPVideoCamera;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SPCameraView : UIView
 
-@property (nonatomic, strong, readonly) CvVideoCamera *camera;
-@property (nonatomic, weak, readonly) UIImageView *cameraContainerView;
+@property (nonatomic, strong, readonly) SPVideoCamera *camera;
 
-@property (nonatomic, weak, readonly) UIView *controlsView;
-@property (nonatomic, weak, readonly) UILabel *promptLabel;
 @property (nonatomic, weak, readonly) UIButton *cameraButton;
 @property (nonatomic, weak, readonly) UIButton *switchCameraButton;
 @property (nonatomic, weak, readonly) UIVisualEffectView *effectView;

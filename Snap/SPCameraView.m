@@ -9,11 +9,10 @@
 #import "SPCameraView.h"
 
 #import <Masonry/Masonry.h>
-#import <opencv2/videoio/cap_ios.h>
 
-#import "SPFont.h"
 #import "SPCameraButton.h"
 #import "SPCarouselViewController.h"
+#import "SPVideoCamera.h"
 
 @implementation SPCameraView
 
@@ -22,42 +21,12 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImageView *cameraContainerView = [[UIImageView alloc] init];
-        [self addSubview:cameraContainerView];
-        _cameraContainerView = cameraContainerView;
-        
-        CvVideoCamera *camera = ({
-            CvVideoCamera *videoCamera = [[CvVideoCamera alloc] initWithParentView:cameraContainerView];
-            videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionFront;
-            videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
-            videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-            videoCamera.defaultFPS = 30;
-            videoCamera.grayscaleMode = NO;
+        SPVideoCamera *camera = ({
+            SPVideoCamera *videoCamera = [[SPVideoCamera alloc] init];
             videoCamera;
         });
+        [self addSubview:camera];
         _camera = camera;
-        
-        UIView *controlsView = ({
-            UIView *view = [[UIView alloc] init];
-            view;
-        });
-        [self addSubview:controlsView];
-        _controlsView = controlsView;
-        
-        UILabel *promptLabel = ({
-            UILabel *label = [[UILabel alloc] init];
-            label.font = [SPFont fontForTextStyle:UIFontTextStyleTitle3 type:SPFontTypeBold];
-            label.translatesAutoresizingMaskIntoConstraints = NO;
-            label.textAlignment = NSTextAlignmentCenter;
-            label.textColor = [UIColor whiteColor];
-            label.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-            label.layer.shadowOffset = CGSizeZero;
-            label.layer.shadowOpacity = 1.0f;
-            label.layer.shadowRadius = 5.0f;
-            label;
-        });
-        [controlsView addSubview:promptLabel];
-        _promptLabel = promptLabel;
         
         UIVisualEffectView *effectView = ({
             UIVisualEffectView *view = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
@@ -73,6 +42,7 @@
                 UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
                 [button setImage:[UIImage imageNamed:@"SwitchCamera"] forState:UIControlStateNormal];
                 button.tintColor = [UIColor whiteColor];
+                [button addTarget:_camera action:@selector(switchCameras) forControlEvents:UIControlEventTouchUpInside];
                 button;
             });
             [view addSubview:switchCameraButton];
@@ -80,6 +50,7 @@
             
             SPCarouselViewController *effectsCarousel = ({
                 SPCarouselViewController *carousel = [[SPCarouselViewController alloc] init];
+                carousel.collectionView.bounces = NO;
                 carousel;
             });
             [view addSubview:effectsCarousel.view];
@@ -87,7 +58,7 @@
             
             view;
         });
-        [controlsView addSubview:effectView];
+        [self addSubview:effectView];
         _effectView = effectView;
         
         [self _setupConstraints];
@@ -98,11 +69,7 @@
 #pragma mark - Internal
 
 - (void)_setupConstraints {
-    [_cameraContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
-    
-    [_controlsView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_camera mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
     
@@ -118,10 +85,6 @@
         make.centerY.equalTo(_cameraButton);
     }];
     
-    [_promptLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(_controlsView);
-    }];
-    
     [_effectsCarousel.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(50);
         make.width.equalTo(_effectView);
@@ -129,7 +92,7 @@
     }];
     
     [_effectView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.leading.trailing.equalTo(_controlsView);
+        make.bottom.leading.trailing.equalTo(self);
         make.top.equalTo(_effectsCarousel.view);
     }];
 }
