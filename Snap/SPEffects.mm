@@ -16,12 +16,27 @@
 #import "SPEdgeDetection.h"
 #import "SPContourDetection.h"
 #import "SPEyeDetection.h"
+#import "SPEyeDetectionApple.h"
 #import "SPFeatureDetection.h"
 #import "SPObjectDetection.h"
+#import "SPMouthDetection.h"
+#import "SPMouthDetection2.h"
 
 @implementation SPEffects
 
-static NSArray<Class> *__effectsClasses = @[[SPNormalEffect class], [SPInvertEffect class], [SPSepiaEffect class], [SPEdgeDetection class], [SPContourDetection class], [SPFeatureDetection class], [SPObjectDetection class], [SPEyeDetection class]];
+static NSArray<Class> *__effectsClasses = @[
+    [SPNormalEffect class],
+    [SPInvertEffect class],
+    [SPSepiaEffect class],
+    [SPEdgeDetection class],
+    [SPContourDetection class],
+    [SPFeatureDetection class],
+    [SPObjectDetection class],
+    [SPEyeDetection class],
+    [SPEyeDetectionApple class],
+    [SPMouthDetection class],
+    [SPMouthDetection2 class],
+];
 
 #pragma mark - Getters
 

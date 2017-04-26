@@ -20,7 +20,7 @@
 		FA0F019D1EAEF4B700BB4F9F /* SPFeatureDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F019C1EAEF4B700BB4F9F /* SPFeatureDetection.mm */; };
 		FA0F01A01EAEF6F200BB4F9F /* SPObjectDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */; };
 		FA0F01A31EAEF79500BB4F9F /* ObjectTrackingClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A11EAEF79500BB4F9F /* ObjectTrackingClass.cpp */; };
-		FA0F01A71EAF24CA00BB4F9F /* SPCameraView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A61EAF24CA00BB4F9F /* SPCameraView.mm */; };
+		FA0F01A71EAF24CA00BB4F9F /* SPCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A61EAF24CA00BB4F9F /* SPCameraView.m */; };
 		FA0F01AA1EAF2FD000BB4F9F /* SPShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A91EAF2FD000BB4F9F /* SPShareViewController.m */; };
 		FA3F54CD1EA92CC100B5D692 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CC1EA92CC100B5D692 /* main.m */; };
 		FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */; };
@@ -28,8 +28,17 @@
 		FA3F54DB1EA92CC100B5D692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3F54D91EA92CC100B5D692 /* LaunchScreen.storyboard */; };
 		FA3F54E41EA92D2A00B5D692 /* SPHomeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */; };
 		FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54E61EA936D000B5D692 /* SPCameraButton.m */; };
+		FAC9B5F81EB056230060D324 /* SPEyeDetectionApple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B5F71EB056230060D324 /* SPEyeDetectionApple.mm */; };
+		FAC9B5FF1EB0584A0060D324 /* SPMouthDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B5FE1EB0584A0060D324 /* SPMouthDetection.mm */; };
+		FAC9B6021EB05D850060D324 /* SPMouthDetection2.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B6011EB05D850060D324 /* SPMouthDetection2.mm */; };
+		FAC9B6041EB05EC80060D324 /* Nose.xml in Resources */ = {isa = PBXBuildFile; fileRef = FAC9B6031EB05EC80060D324 /* Nose.xml */; };
 		FAF072291EAF9B29004060F7 /* SPShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF072281EAF9B29004060F7 /* SPShareView.m */; };
 		FAF0722C1EAFA862004060F7 /* UIImage+SPCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */; };
+		FAF072371EAFC11E004060F7 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAF0722E1EAFC11E004060F7 /* CMakeLists.txt */; };
+		FAF0723E1EAFC7E9004060F7 /* PupilTracking.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF0723D1EAFC7E9004060F7 /* PupilTracking.mm */; };
+		FAF072401EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = FAF0723F1EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml */; };
+		FAF072421EB021EF004060F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF072411EB021EF004060F7 /* AudioToolbox.framework */; };
+		FAF072451EB0361D004060F7 /* SPVideoCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF072441EB0361D004060F7 /* SPVideoCamera.mm */; };
 		FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */; };
 		FAF6EEC01EAE59BE0004EA7B /* SPEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEBF1EAE59BE0004EA7B /* SPEffect.mm */; };
 		FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EEC31EAE5A6D0004EA7B /* SPInvertEffect.mm */; };
@@ -67,7 +76,7 @@
 		FA0F01A11EAEF79500BB4F9F /* ObjectTrackingClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectTrackingClass.cpp; sourceTree = "<group>"; };
 		FA0F01A21EAEF79500BB4F9F /* ObjectTrackingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectTrackingClass.h; sourceTree = "<group>"; };
 		FA0F01A51EAF24CA00BB4F9F /* SPCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCameraView.h; sourceTree = "<group>"; };
-		FA0F01A61EAF24CA00BB4F9F /* SPCameraView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPCameraView.mm; sourceTree = "<group>"; };
+		FA0F01A61EAF24CA00BB4F9F /* SPCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCameraView.m; sourceTree = "<group>"; };
 		FA0F01A81EAF2FD000BB4F9F /* SPShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShareViewController.h; sourceTree = "<group>"; };
 		FA0F01A91EAF2FD000BB4F9F /* SPShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPShareViewController.m; sourceTree = "<group>"; };
 		FA3F54C81EA92CC100B5D692 /* Snap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,10 +90,32 @@
 		FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPHomeViewController.mm; sourceTree = "<group>"; };
 		FA3F54E51EA936D000B5D692 /* SPCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCameraButton.h; sourceTree = "<group>"; };
 		FA3F54E61EA936D000B5D692 /* SPCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCameraButton.m; sourceTree = "<group>"; };
+		FAC9B5F61EB056230060D324 /* SPEyeDetectionApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEyeDetectionApple.h; sourceTree = "<group>"; };
+		FAC9B5F71EB056230060D324 /* SPEyeDetectionApple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEyeDetectionApple.mm; sourceTree = "<group>"; };
+		FAC9B5FD1EB0584A0060D324 /* SPMouthDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMouthDetection.h; sourceTree = "<group>"; };
+		FAC9B5FE1EB0584A0060D324 /* SPMouthDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPMouthDetection.mm; sourceTree = "<group>"; };
+		FAC9B6001EB05D850060D324 /* SPMouthDetection2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMouthDetection2.h; sourceTree = "<group>"; };
+		FAC9B6011EB05D850060D324 /* SPMouthDetection2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPMouthDetection2.mm; sourceTree = "<group>"; };
+		FAC9B6031EB05EC80060D324 /* Nose.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Nose.xml; sourceTree = "<group>"; };
 		FAF072271EAF9B29004060F7 /* SPShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShareView.h; sourceTree = "<group>"; };
 		FAF072281EAF9B29004060F7 /* SPShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPShareView.m; sourceTree = "<group>"; };
 		FAF0722A1EAFA862004060F7 /* UIImage+SPCrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPCrop.h"; sourceTree = "<group>"; };
 		FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPCrop.m"; sourceTree = "<group>"; };
+		FAF0722E1EAFC11E004060F7 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		FAF0722F1EAFC11E004060F7 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		FAF072301EAFC11E004060F7 /* findEyeCenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = findEyeCenter.cpp; sourceTree = "<group>"; };
+		FAF072311EAFC11E004060F7 /* findEyeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = findEyeCenter.h; sourceTree = "<group>"; };
+		FAF072321EAFC11E004060F7 /* findEyeCorner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = findEyeCorner.cpp; sourceTree = "<group>"; };
+		FAF072331EAFC11E004060F7 /* findEyeCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = findEyeCorner.h; sourceTree = "<group>"; };
+		FAF072341EAFC11E004060F7 /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
+		FAF072351EAFC11E004060F7 /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		FAF072361EAFC11E004060F7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FAF0723C1EAFC7E9004060F7 /* PupilTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PupilTracking.h; sourceTree = "<group>"; };
+		FAF0723D1EAFC7E9004060F7 /* PupilTracking.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PupilTracking.mm; sourceTree = "<group>"; };
+		FAF0723F1EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
+		FAF072411EB021EF004060F7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FAF072431EB0361D004060F7 /* SPVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPVideoCamera.h; sourceTree = "<group>"; };
+		FAF072441EB0361D004060F7 /* SPVideoCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPVideoCamera.mm; sourceTree = "<group>"; };
 		FAF6EEBB1EAE58C50004EA7B /* SPOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOpenCVHelper.h; sourceTree = "<group>"; };
 		FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPOpenCVHelper.mm; sourceTree = "<group>"; };
 		FAF6EEBE1EAE59BE0004EA7B /* SPEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEffect.h; sourceTree = "<group>"; };
@@ -104,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF072421EB021EF004060F7 /* AudioToolbox.framework in Frameworks */,
 				B0298EB98AD4A844606CC574 /* Pods_Snap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +146,7 @@
 		1912C54786C9AB32CE2A9F14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF072411EB021EF004060F7 /* AudioToolbox.framework */,
 				D5F285E982EF619F61AA4DEA /* Pods_Snap.framework */,
 			);
 			name = Frameworks;
@@ -188,6 +221,8 @@
 				FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */,
 				FA3F54E21EA92D2A00B5D692 /* SPHomeViewController.h */,
 				FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */,
+				FAF072431EB0361D004060F7 /* SPVideoCamera.h */,
+				FAF072441EB0361D004060F7 /* SPVideoCamera.mm */,
 				FA0F01AB1EAF312400BB4F9F /* Share */,
 				FA98DDB41EAEB19800C416A3 /* Views */,
 				FAF6EEC11EAE5A5B0004EA7B /* Effects */,
@@ -195,6 +230,7 @@
 				FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */,
 				FAF0722A1EAFA862004060F7 /* UIImage+SPCrop.h */,
 				FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */,
+				FAF0722D1EAFC11E004060F7 /* eyelike */,
 				FA0F01A41EAEF79A00BB4F9F /* Other */,
 				FA3F54CB1EA92CC100B5D692 /* Supporting Files */,
 			);
@@ -204,6 +240,8 @@
 		FA3F54CB1EA92CC100B5D692 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAF0723F1EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml */,
+				FAC9B6031EB05EC80060D324 /* Nose.xml */,
 				FA3F54D71EA92CC100B5D692 /* Assets.xcassets */,
 				FA3F54D91EA92CC100B5D692 /* LaunchScreen.storyboard */,
 				FA3F54DC1EA92CC100B5D692 /* Info.plist */,
@@ -220,10 +258,77 @@
 				FA3F54E51EA936D000B5D692 /* SPCameraButton.h */,
 				FA3F54E61EA936D000B5D692 /* SPCameraButton.m */,
 				FA0F01A51EAF24CA00BB4F9F /* SPCameraView.h */,
-				FA0F01A61EAF24CA00BB4F9F /* SPCameraView.mm */,
+				FA0F01A61EAF24CA00BB4F9F /* SPCameraView.m */,
 				FA0F01821EAEC88800BB4F9F /* Carousel */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		FAC9B5F91EB058010060D324 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				FAF6EEC21EAE5A6D0004EA7B /* SPInvertEffect.h */,
+				FAF6EEC31EAE5A6D0004EA7B /* SPInvertEffect.mm */,
+				FA0F01891EAEE7DE00BB4F9F /* SPSepiaEffect.h */,
+				FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */,
+			);
+			name = Filters;
+			sourceTree = "<group>";
+		};
+		FAC9B5FA1EB058170060D324 /* Edges */ = {
+			isa = PBXGroup;
+			children = (
+				FA0F018F1EAEECCB00BB4F9F /* SPEdgeDetection.h */,
+				FA0F01901EAEECCB00BB4F9F /* SPEdgeDetection.mm */,
+				FA0F01981EAEF30A00BB4F9F /* SPContourDetection.h */,
+				FA0F01991EAEF30A00BB4F9F /* SPContourDetection.mm */,
+			);
+			name = Edges;
+			sourceTree = "<group>";
+		};
+		FAC9B5FB1EB058260060D324 /* Face */ = {
+			isa = PBXGroup;
+			children = (
+				FA0F01951EAEF28E00BB4F9F /* SPEyeDetection.h */,
+				FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */,
+				FAC9B5F61EB056230060D324 /* SPEyeDetectionApple.h */,
+				FAC9B5F71EB056230060D324 /* SPEyeDetectionApple.mm */,
+				FAC9B5FD1EB0584A0060D324 /* SPMouthDetection.h */,
+				FAC9B5FE1EB0584A0060D324 /* SPMouthDetection.mm */,
+				FAC9B6001EB05D850060D324 /* SPMouthDetection2.h */,
+				FAC9B6011EB05D850060D324 /* SPMouthDetection2.mm */,
+			);
+			name = Face;
+			sourceTree = "<group>";
+		};
+		FAC9B5FC1EB058330060D324 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				FA0F019B1EAEF4B700BB4F9F /* SPFeatureDetection.h */,
+				FA0F019C1EAEF4B700BB4F9F /* SPFeatureDetection.mm */,
+				FA0F019E1EAEF6F200BB4F9F /* SPObjectDetection.h */,
+				FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		FAF0722D1EAFC11E004060F7 /* eyelike */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0722E1EAFC11E004060F7 /* CMakeLists.txt */,
+				FAF0722F1EAFC11E004060F7 /* constants.h */,
+				FAF072301EAFC11E004060F7 /* findEyeCenter.cpp */,
+				FAF072311EAFC11E004060F7 /* findEyeCenter.h */,
+				FAF072321EAFC11E004060F7 /* findEyeCorner.cpp */,
+				FAF072331EAFC11E004060F7 /* findEyeCorner.h */,
+				FAF072341EAFC11E004060F7 /* helpers.cpp */,
+				FAF072351EAFC11E004060F7 /* helpers.h */,
+				FAF072361EAFC11E004060F7 /* main.cpp */,
+				FAF0723C1EAFC7E9004060F7 /* PupilTracking.h */,
+				FAF0723D1EAFC7E9004060F7 /* PupilTracking.mm */,
+			);
+			name = eyelike;
+			path = "../../eyeLike-master/eyelike";
 			sourceTree = "<group>";
 		};
 		FAF6EEC11EAE5A5B0004EA7B /* Effects */ = {
@@ -235,22 +340,12 @@
 				FAF6EEBF1EAE59BE0004EA7B /* SPEffect.mm */,
 				FAF6EECB1EAE64830004EA7B /* SPNormalEffect.h */,
 				FAF6EECC1EAE64830004EA7B /* SPNormalEffect.mm */,
-				FAF6EEC21EAE5A6D0004EA7B /* SPInvertEffect.h */,
-				FAF6EEC31EAE5A6D0004EA7B /* SPInvertEffect.mm */,
 				FAF6EEC51EAE5D7F0004EA7B /* SPTextEffect.h */,
 				FAF6EEC61EAE5D7F0004EA7B /* SPTextEffect.mm */,
-				FA0F01891EAEE7DE00BB4F9F /* SPSepiaEffect.h */,
-				FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */,
-				FA0F018F1EAEECCB00BB4F9F /* SPEdgeDetection.h */,
-				FA0F01901EAEECCB00BB4F9F /* SPEdgeDetection.mm */,
-				FA0F01981EAEF30A00BB4F9F /* SPContourDetection.h */,
-				FA0F01991EAEF30A00BB4F9F /* SPContourDetection.mm */,
-				FA0F01951EAEF28E00BB4F9F /* SPEyeDetection.h */,
-				FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */,
-				FA0F019B1EAEF4B700BB4F9F /* SPFeatureDetection.h */,
-				FA0F019C1EAEF4B700BB4F9F /* SPFeatureDetection.mm */,
-				FA0F019E1EAEF6F200BB4F9F /* SPObjectDetection.h */,
-				FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */,
+				FAC9B5F91EB058010060D324 /* Filters */,
+				FAC9B5FA1EB058170060D324 /* Edges */,
+				FAC9B5FC1EB058330060D324 /* Features */,
+				FAC9B5FB1EB058260060D324 /* Face */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -320,6 +415,9 @@
 			files = (
 				FA3F54DB1EA92CC100B5D692 /* LaunchScreen.storyboard in Resources */,
 				FA3F54D81EA92CC100B5D692 /* Assets.xcassets in Resources */,
+				FAC9B6041EB05EC80060D324 /* Nose.xml in Resources */,
+				FAF072401EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml in Resources */,
+				FAF072371EAFC11E004060F7 /* CMakeLists.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,15 +477,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF0722C1EAFA862004060F7 /* UIImage+SPCrop.m in Sources */,
+				FAF072451EB0361D004060F7 /* SPVideoCamera.mm in Sources */,
 				FA3F54E41EA92D2A00B5D692 /* SPHomeViewController.mm in Sources */,
 				FA0F01911EAEECCB00BB4F9F /* SPEdgeDetection.mm in Sources */,
 				FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */,
 				FA052F0B1EAEBD7B006E5FAA /* SPCarouselViewCell.m in Sources */,
 				FA3F54CD1EA92CC100B5D692 /* main.m in Sources */,
+				FAF0723E1EAFC7E9004060F7 /* PupilTracking.mm in Sources */,
 				FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */,
 				FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */,
 				FA0F01AA1EAF2FD000BB4F9F /* SPShareViewController.m in Sources */,
-				FA0F01A71EAF24CA00BB4F9F /* SPCameraView.mm in Sources */,
+				FA0F01A71EAF24CA00BB4F9F /* SPCameraView.m in Sources */,
 				FA052F081EAEBD61006E5FAA /* SPCarouselViewController.m in Sources */,
 				FAF6EEC01EAE59BE0004EA7B /* SPEffect.mm in Sources */,
 				FA052F111EAEC5A2006E5FAA /* SPEffects.mm in Sources */,
@@ -399,8 +499,11 @@
 				FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */,
 				FAF6EECD1EAE64830004EA7B /* SPNormalEffect.mm in Sources */,
 				FA0F019A1EAEF30A00BB4F9F /* SPContourDetection.mm in Sources */,
+				FAC9B5FF1EB0584A0060D324 /* SPMouthDetection.mm in Sources */,
 				FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */,
+				FAC9B6021EB05D850060D324 /* SPMouthDetection2.mm in Sources */,
 				FA0F01941EAEEDC200BB4F9F /* cvneon.cpp in Sources */,
+				FAC9B5F81EB056230060D324 /* SPEyeDetectionApple.mm in Sources */,
 				FAF6EECA1EAE5FF20004EA7B /* SPFont.m in Sources */,
 				FA0F01A31EAEF79500BB4F9F /* ObjectTrackingClass.cpp in Sources */,
 				FA0F01A01EAEF6F200BB4F9F /* SPObjectDetection.mm in Sources */,
