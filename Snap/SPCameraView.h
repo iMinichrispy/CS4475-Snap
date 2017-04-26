@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, readonly) UIButton *cameraButton;
 @property (nonatomic, weak, readonly) UIButton *switchCameraButton;
+@property (nonatomic, weak, readonly) UIButton *flashButton;
 @property (nonatomic, weak, readonly) UIVisualEffectView *effectView;
 @property (nonatomic, strong, readonly) SPCarouselViewController *effectsCarousel;
 

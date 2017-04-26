@@ -8,6 +8,7 @@
 
 #import "SPVideoCamera.h"
 
+#import <AVFoundation/AVFoundation.h>
 #import <Masonry/Masonry.h>
 #import <opencv2/videoio/cap_ios.h>
 
@@ -24,6 +25,7 @@
 
 @implementation SPVideoCamera {
     cv::Mat _outputFrame;
+    BOOL _flashOn;
 }
 
 #pragma mark - Initialization
@@ -106,6 +108,24 @@
     _promptLabel.hidden = YES;
     UIImage *image = [_currentEffect imageForFrame:_outputFrame];
     return image;
+}
+
+- (void)toggleFlash {
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if ([device hasTorch] && [device hasFlash]){
+        
+        [device lockForConfiguration:nil];
+        if (_flashOn) {
+            [device setTorchMode:AVCaptureTorchModeOff];
+//            [device setFlashMode:AVCaptureFlashModeOff];
+            _flashOn = NO;
+        } else {
+            [device setTorchMode:AVCaptureTorchModeOn];
+//            [device setFlashMode:AVCaptureFlashModeOn];
+            _flashOn = YES;
+        }
+        [device unlockForConfiguration];
+    }
 }
 
 #pragma mark - Internal

@@ -48,6 +48,16 @@
             [view addSubview:switchCameraButton];
             _switchCameraButton = switchCameraButton;
             
+            UIButton *flashButton = ({
+                UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+                [button setImage:[UIImage imageNamed:@"Flash"] forState:UIControlStateNormal];
+                button.tintColor = [UIColor whiteColor];
+                [button addTarget:_camera action:@selector(toggleFlash) forControlEvents:UIControlEventTouchUpInside];
+                button;
+            });
+            [view addSubview:flashButton];
+            _flashButton = flashButton;
+            
             SPCarouselViewController *effectsCarousel = ({
                 SPCarouselViewController *carousel = [[SPCarouselViewController alloc] init];
                 carousel.collectionView.bounces = NO;
@@ -81,8 +91,14 @@
     
     [_switchCameraButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(55.0f, 55.0f));
-        make.right.equalTo(_effectView).with.offset(-30);
         make.centerY.equalTo(_cameraButton);
+        make.trailing.equalTo(_effectView).with.offset(-30);
+    }];
+    
+    [_flashButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(_switchCameraButton);
+        make.centerY.equalTo(_switchCameraButton);
+        make.leading.equalTo(_effectView).with.offset(30);
     }];
     
     [_effectsCarousel.view mas_makeConstraints:^(MASConstraintMaker *make) {
