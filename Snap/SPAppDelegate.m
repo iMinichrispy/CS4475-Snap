@@ -10,17 +10,11 @@
 
 #import "SPHomeViewController.h"
 
-@interface SPAppDelegate ()
-
-@end
-
 @implementation SPAppDelegate
 
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [GTAppearanceManager applyCustomAppearance];
-    
     SPHomeViewController *homeViewController = [[SPHomeViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = homeViewController;
