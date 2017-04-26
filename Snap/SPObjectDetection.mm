@@ -28,6 +28,8 @@
     bool computeObject;
     bool detectObject;
     bool trackObject;
+    
+    bool tracking;
 }
 
 - (instancetype)init {
@@ -44,21 +46,27 @@
 }
 
 - (NSString *)prompt {
-    return @"Tap an Object";
+    return @"Tap to Reset";
 }
 
-- (void)effect:(SPEffect *)effect handleTouchReferenceFrame:(const cv::Mat&)reference {
-    getGray(reference, imagePrev);
+- (void)handleTouchFrame:(const cv::Mat&)frame {
+    getGray(frame, imagePrev);
     computeObject = true;
 }
 
-- (void)effectDidEnd:(SPEffect *)effect {
+- (void)stop {
     computeObject = false;
     detectObject = false;
     trackObject = false;
+    tracking = false;
 }
 
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {
+- (void)processImage:(cv::Mat&)image {
+    if (!imagePrev.empty() && !tracking) {
+        [self handleTouchFrame:imagePrev];
+        tracking = true;
+    }
+    
     // display the frame
     image.copyTo(image);
     
