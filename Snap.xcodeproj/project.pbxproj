@@ -12,6 +12,7 @@
 		FA052F0B1EAEBD7B006E5FAA /* SPCarouselViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052F0A1EAEBD7B006E5FAA /* SPCarouselViewCell.m */; };
 		FA052F0E1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052F0D1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m */; };
 		FA052F111EAEC5A2006E5FAA /* SPEffects.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA052F101EAEC5A2006E5FAA /* SPEffects.mm */; };
+		FA0941751EB14BFA00B3100B /* PupilTracking.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA09416F1EB14BFA00B3100B /* PupilTracking.mm */; };
 		FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */; };
 		FA0F01911EAEECCB00BB4F9F /* SPEdgeDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01901EAEECCB00BB4F9F /* SPEdgeDetection.mm */; };
 		FA0F01941EAEEDC200BB4F9F /* cvneon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01921EAEEDC200BB4F9F /* cvneon.cpp */; };
@@ -34,8 +35,6 @@
 		FAC9B6041EB05EC80060D324 /* Nose.xml in Resources */ = {isa = PBXBuildFile; fileRef = FAC9B6031EB05EC80060D324 /* Nose.xml */; };
 		FAF072291EAF9B29004060F7 /* SPShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF072281EAF9B29004060F7 /* SPShareView.m */; };
 		FAF0722C1EAFA862004060F7 /* UIImage+SPCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */; };
-		FAF072371EAFC11E004060F7 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAF0722E1EAFC11E004060F7 /* CMakeLists.txt */; };
-		FAF0723E1EAFC7E9004060F7 /* PupilTracking.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF0723D1EAFC7E9004060F7 /* PupilTracking.mm */; };
 		FAF072401EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = FAF0723F1EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml */; };
 		FAF072421EB021EF004060F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF072411EB021EF004060F7 /* AudioToolbox.framework */; };
 		FAF072451EB0361D004060F7 /* SPVideoCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF072441EB0361D004060F7 /* SPVideoCamera.mm */; };
@@ -59,6 +58,8 @@
 		FA052F0D1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCarouselViewFlowLayout.m; sourceTree = "<group>"; };
 		FA052F0F1EAEC5A2006E5FAA /* SPEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEffects.h; sourceTree = "<group>"; };
 		FA052F101EAEC5A2006E5FAA /* SPEffects.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEffects.mm; sourceTree = "<group>"; };
+		FA09416E1EB14BFA00B3100B /* PupilTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PupilTracking.h; sourceTree = "<group>"; };
+		FA09416F1EB14BFA00B3100B /* PupilTracking.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PupilTracking.mm; sourceTree = "<group>"; };
 		FA0F01891EAEE7DE00BB4F9F /* SPSepiaEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSepiaEffect.h; sourceTree = "<group>"; };
 		FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPSepiaEffect.mm; sourceTree = "<group>"; };
 		FA0F018F1EAEECCB00BB4F9F /* SPEdgeDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEdgeDetection.h; sourceTree = "<group>"; };
@@ -101,17 +102,6 @@
 		FAF072281EAF9B29004060F7 /* SPShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPShareView.m; sourceTree = "<group>"; };
 		FAF0722A1EAFA862004060F7 /* UIImage+SPCrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPCrop.h"; sourceTree = "<group>"; };
 		FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPCrop.m"; sourceTree = "<group>"; };
-		FAF0722E1EAFC11E004060F7 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		FAF0722F1EAFC11E004060F7 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
-		FAF072301EAFC11E004060F7 /* findEyeCenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = findEyeCenter.cpp; sourceTree = "<group>"; };
-		FAF072311EAFC11E004060F7 /* findEyeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = findEyeCenter.h; sourceTree = "<group>"; };
-		FAF072321EAFC11E004060F7 /* findEyeCorner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = findEyeCorner.cpp; sourceTree = "<group>"; };
-		FAF072331EAFC11E004060F7 /* findEyeCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = findEyeCorner.h; sourceTree = "<group>"; };
-		FAF072341EAFC11E004060F7 /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
-		FAF072351EAFC11E004060F7 /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
-		FAF072361EAFC11E004060F7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		FAF0723C1EAFC7E9004060F7 /* PupilTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PupilTracking.h; sourceTree = "<group>"; };
-		FAF0723D1EAFC7E9004060F7 /* PupilTracking.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PupilTracking.mm; sourceTree = "<group>"; };
 		FAF0723F1EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
 		FAF072411EB021EF004060F7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FAF072431EB0361D004060F7 /* SPVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPVideoCamera.h; sourceTree = "<group>"; };
@@ -159,6 +149,15 @@
 				931F5FB7B930F0F0E46EDD1D /* Pods-Snap.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA0941641EB14BFA00B3100B /* eyelike */ = {
+			isa = PBXGroup;
+			children = (
+				FA09416E1EB14BFA00B3100B /* PupilTracking.h */,
+				FA09416F1EB14BFA00B3100B /* PupilTracking.mm */,
+			);
+			path = eyelike;
 			sourceTree = "<group>";
 		};
 		FA0F01821EAEC88800BB4F9F /* Carousel */ = {
@@ -230,7 +229,7 @@
 				FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */,
 				FAF0722A1EAFA862004060F7 /* UIImage+SPCrop.h */,
 				FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */,
-				FAF0722D1EAFC11E004060F7 /* eyelike */,
+				FA0941641EB14BFA00B3100B /* eyelike */,
 				FA0F01A41EAEF79A00BB4F9F /* Other */,
 				FA3F54CB1EA92CC100B5D692 /* Supporting Files */,
 			);
@@ -310,25 +309,6 @@
 				FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */,
 			);
 			name = Features;
-			sourceTree = "<group>";
-		};
-		FAF0722D1EAFC11E004060F7 /* eyelike */ = {
-			isa = PBXGroup;
-			children = (
-				FAF0722E1EAFC11E004060F7 /* CMakeLists.txt */,
-				FAF0722F1EAFC11E004060F7 /* constants.h */,
-				FAF072301EAFC11E004060F7 /* findEyeCenter.cpp */,
-				FAF072311EAFC11E004060F7 /* findEyeCenter.h */,
-				FAF072321EAFC11E004060F7 /* findEyeCorner.cpp */,
-				FAF072331EAFC11E004060F7 /* findEyeCorner.h */,
-				FAF072341EAFC11E004060F7 /* helpers.cpp */,
-				FAF072351EAFC11E004060F7 /* helpers.h */,
-				FAF072361EAFC11E004060F7 /* main.cpp */,
-				FAF0723C1EAFC7E9004060F7 /* PupilTracking.h */,
-				FAF0723D1EAFC7E9004060F7 /* PupilTracking.mm */,
-			);
-			name = eyelike;
-			path = "../../eyeLike-master/eyelike";
 			sourceTree = "<group>";
 		};
 		FAF6EEC11EAE5A5B0004EA7B /* Effects */ = {
@@ -417,7 +397,6 @@
 				FA3F54D81EA92CC100B5D692 /* Assets.xcassets in Resources */,
 				FAC9B6041EB05EC80060D324 /* Nose.xml in Resources */,
 				FAF072401EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml in Resources */,
-				FAF072371EAFC11E004060F7 /* CMakeLists.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +462,6 @@
 				FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */,
 				FA052F0B1EAEBD7B006E5FAA /* SPCarouselViewCell.m in Sources */,
 				FA3F54CD1EA92CC100B5D692 /* main.m in Sources */,
-				FAF0723E1EAFC7E9004060F7 /* PupilTracking.mm in Sources */,
 				FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */,
 				FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */,
 				FA0F01AA1EAF2FD000BB4F9F /* SPShareViewController.m in Sources */,
@@ -499,6 +477,7 @@
 				FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */,
 				FAF6EECD1EAE64830004EA7B /* SPNormalEffect.mm in Sources */,
 				FA0F019A1EAEF30A00BB4F9F /* SPContourDetection.mm in Sources */,
+				FA0941751EB14BFA00B3100B /* PupilTracking.mm in Sources */,
 				FAC9B5FF1EB0584A0060D324 /* SPMouthDetection.mm in Sources */,
 				FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */,
 				FAC9B6021EB05D850060D324 /* SPMouthDetection2.mm in Sources */,
