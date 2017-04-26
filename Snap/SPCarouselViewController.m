@@ -83,6 +83,9 @@ static NSString *const SPCarouselViewCellIdentifier = @"SPCarouselViewCellIdenti
         selectedCell.selected = YES;
         
         [self _setOffsetForSelectedSegmentIndex:_selectedSegmentIndex animated:YES];
+        
+        UISelectionFeedbackGenerator *generator = [[UISelectionFeedbackGenerator alloc] init];
+        [generator selectionChanged];
     }
 }
 
