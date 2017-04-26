@@ -14,8 +14,4 @@
     return @"Normal";
 }
 
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {
-    // No op, use a subclass
-}
-
 @end

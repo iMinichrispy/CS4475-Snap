@@ -14,7 +14,7 @@
     return @"Text";
 }
 
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {
+- (void)processImage:(cv::Mat&)image {
     const char* str = [@"Alex Perez" cStringUsingEncoding: NSUTF8StringEncoding];
     cv::putText(image, str, cv::Point(100, 100), cv::FONT_HERSHEY_PLAIN, 2.0, cv::Scalar(0, 0, 255));
 }

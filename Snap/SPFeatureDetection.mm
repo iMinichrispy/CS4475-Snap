@@ -54,7 +54,7 @@ static bool keypoint_score_greater(const cv::KeyPoint& kp1, const cv::KeyPoint& 
     return @"Features";
 }
 
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {
+- (void)processImage:(cv::Mat&)image {
     // convert input frame to gray scale
     getGray(image, grayImage);
     

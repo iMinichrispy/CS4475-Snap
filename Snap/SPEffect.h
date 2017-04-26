@@ -15,23 +15,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class SPEffect;
-@protocol SPEffectDelegate <NSObject>
-
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image;
-
-@optional
-- (void)effect:(SPEffect *)effect handleTouchReferenceFrame:(const cv::Mat&)reference;
-- (void)effectDidStart:(SPEffect *)effect;
-- (void)effectDidEnd:(SPEffect *)effect;
-- (UIImage *)effect:(SPEffect *)effect imageForImage:(UIImage *)image;
-
-@end
-
-@interface SPEffect : NSObject <SPEffectDelegate>
+/*!
+ * @class SPEffect
+ * @note This is an abstract class, DO NOT USE DIRECTLY
+ */
+@interface SPEffect : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong, nullable) NSString *prompt;
+
+@property (nonatomic, assign) BOOL shouldHandleTouch;
+
+- (void)processImage:(cv::Mat&)image;
+- (void)start;
+- (void)stop;
+- (void)handleTouchFrame:(const cv::Mat&)frame;
+- (UIImage *)imageForFrame:(const cv::Mat&)frame; // potentially for any post-processing
 
 @end
 

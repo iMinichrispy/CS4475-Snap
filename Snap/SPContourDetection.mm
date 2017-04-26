@@ -18,7 +18,7 @@
     return @"Contour";
 }
 
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {
+- (void)processImage:(cv::Mat&)image {
     getGray(image, gray);
     
     cv::Mat edges;

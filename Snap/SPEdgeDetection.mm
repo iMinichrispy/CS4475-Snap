@@ -57,7 +57,7 @@
     return @"Edges";
 }
 
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {
+- (void)processImage:(cv::Mat&)image {
     getGray(image, grayImage);
     
     if (m_algorithmName == "Canny")

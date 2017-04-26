@@ -32,7 +32,7 @@
     return @"Sepia";
 }
 
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {
+- (void)processImage:(cv::Mat&)image {
     cv::transform(image, image, m_sepiaKernel);
 }
 
