@@ -8,97 +8,173 @@
 
 #import "SPEyeDetection.h"
 
-#import <UIKit/UIKit.h>
+#import "PupilTracking.h"
 
-const CGFloat kRetinaToEyeScaleFactor = 0.5f;
-const CGFloat kFaceBoundsToEyeScaleFactor = 4.0f;
+const int HaarOptions = CV_HAAR_FIND_BIGGEST_OBJECT | CV_HAAR_DO_ROUGH_SEARCH;
 
-@implementation SPEyeDetection
+typedef NS_ENUM(NSInteger, EyePosition) {
+    EyePositionNone,
+    EyePositionTop,
+    EyePositionBottom
+};
+
+@interface SPEyeDetection ()
+
+@property (nonatomic, strong) PupilTracking* pupilTracking;
+
+@end
+
+@implementation SPEyeDetection {
+    EyePosition eyePosition;
+    BOOL eyesAreTop;
+    NSInteger * framesAtPosition;
+    cv::CascadeClassifier faceCascade;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+//        self.pupilTracking = [PupilTracking alloc];
+//        [self.pupilTracking initialiseVars];
+//        [self.pupilTracking createCornerKernels];
+        
+        NSString* faceCascadePath = [[NSBundle mainBundle] pathForResource:@"haarcascade_frontalface_alt2" ofType:@"xml"];
+        if (!faceCascade.load([faceCascadePath UTF8String])) {
+            NSLog(@"Error loading face cascade");
+        }
+    }
+    return self;
+}
 
 - (NSString *)name {
     return @"Eyes";
 }
 
-- (UIImage *)effect:(SPEffect *)effect imageForImage:(UIImage *)image {
-    CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
-                                              context:nil
-                                              options:@{CIDetectorAccuracy: CIDetectorAccuracyHigh}];
-    // Get features from the image
-    CIImage* newImage = [CIImage imageWithCGImage:image.CGImage];
+- (void)start {
+    [self.pupilTracking releaseCornerKernels];
+    self.pupilTracking = [PupilTracking alloc];
+    [self.pupilTracking initialiseVars];
+    [self.pupilTracking createCornerKernels];
+}
+
+- (void)processImage:(cv::Mat&)image {
+    cv::Mat grayscaleFrame;
+    grayscaleFrame = image;
+//    cvtColor(image, grayscaleFrame, CV_BGR2GRAY);
+//    equalizeHist(grayscaleFrame, grayscaleFrame);
     
-    NSArray *features = [detector featuresInImage:newImage];
+    std::vector<cv::Rect> faces;
     
-    UIGraphicsBeginImageContext(image.size);
-    CGRect imageRect = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
+    faceCascade.detectMultiScale(grayscaleFrame, faces, 1.1, 2, HaarOptions, cv::Size(60, 60));
     
-    //Draws this in the upper left coordinate system
-    [image drawInRect:imageRect blendMode:kCGBlendModeNormal alpha:1.0f];
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    for (CIFaceFeature *faceFeature in features) {
-        CGRect faceRect = [faceFeature bounds];
-        CGContextSaveGState(context);
+    for (int i = 0; i < faces.size(); i++)
+    {
+                cv::Point pt1(faces[i].x + faces[i].width, faces[i].y + faces[i].height);
+                cv::Point pt2(faces[i].x, faces[i].y);
         
-        // CI and CG work in different coordinate systems, we should translate to
-        // the correct one so we don't get mixed up when calculating the face position.
-        CGContextTranslateCTM(context, 0.0, imageRect.size.height);
-        CGContextScaleCTM(context, 1.0f, -1.0f);
+        cv::rectangle(image, faces[i], 1234);
+    }
+    if (faces.size() > 0) {
         
-        if ([faceFeature hasLeftEyePosition]) {
-            CGPoint leftEyePosition = [faceFeature leftEyePosition];
-            CGFloat eyeWidth = faceRect.size.width / kFaceBoundsToEyeScaleFactor;
-            CGFloat eyeHeight = faceRect.size.height / kFaceBoundsToEyeScaleFactor;
-            CGRect eyeRect = CGRectMake(leftEyePosition.x - eyeWidth/2.0f,
-                                        leftEyePosition.y - eyeHeight/2.0f,
-                                        eyeWidth,
-                                        eyeHeight);
-            [self _drawEyeBallForFrame:eyeRect];
-        }
-        
-        if ([faceFeature hasRightEyePosition]) {
-            CGPoint leftEyePosition = [faceFeature rightEyePosition];
-            CGFloat eyeWidth = faceRect.size.width / kFaceBoundsToEyeScaleFactor;
-            CGFloat eyeHeight = faceRect.size.height / kFaceBoundsToEyeScaleFactor;
-            CGRect eyeRect = CGRectMake(leftEyePosition.x - eyeWidth / 2.0f,
-                                        leftEyePosition.y - eyeHeight / 2.0f,
-                                        eyeWidth,
-                                        eyeHeight);
-            [self _drawEyeBallForFrame:eyeRect];
-        }
-        
-        CGContextRestoreGState(context);
+        [self findEyes:grayscaleFrame withFace:faces[0] output:image];
+    }
+}
+
+- (void) findEyes:(cv::Mat)frame withFace: (cv::Rect) face output:(cv::Mat&) outputFrame {
+//    cv::Mat faceROI = frame(face); // scales frame to face rect
+    cv::Mat faceROI = frame;
+    //cv::Mat debugFace;
+    
+    if (self.pupilTracking.SmoothFaceImage) {
+        double sigma = self.pupilTracking.SmoothFaceFactor * face.width;
+        GaussianBlur( faceROI, faceROI, cv::Size( 0, 0 ), sigma);
     }
     
-    UIImage *overlayImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return overlayImage;
-}
-
-- (void)_drawEyeBallForFrame:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextAddEllipseInRect(context, rect);
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextFillPath(context);
+    //-- Find eye regions and draw them (face box)
+    int eye_region_width = face.width * (self.pupilTracking.EyePercentWidth/100.0);
+    int eye_region_height = face.width * (self.pupilTracking.EyePercentHeight/100.0);
+    int eye_region_top = face.height * (self.pupilTracking.EyePercentTop/100.0);
+    cv::Rect leftEyeRegion(face.width*(self.pupilTracking.EyePercentSide/100.0),
+                           eye_region_top,eye_region_width,eye_region_height);
+    cv::Rect rightEyeRegion(face.width - eye_region_width - face.width*(self.pupilTracking.EyePercentSide/100.0),
+                            eye_region_top,eye_region_width,eye_region_height);
     
-    CGFloat x, y, eyeSizeWidth, eyeSizeHeight;
-    eyeSizeWidth = rect.size.width * kRetinaToEyeScaleFactor;
-    eyeSizeHeight = rect.size.height * kRetinaToEyeScaleFactor;
+    //-- Find Eye Centers
     
-    x = arc4random_uniform((rect.size.width - eyeSizeWidth));
-    y = arc4random_uniform((rect.size.height - eyeSizeHeight));
-    x += rect.origin.x;
-    y += rect.origin.y;
+    cv::Point leftPupil = [self.pupilTracking findEyeCenter:outputFrame withEye:leftEyeRegion withOutput:outputFrame];
+    cv::Point rightPupil = [self.pupilTracking findEyeCenter:outputFrame withEye:rightEyeRegion withOutput:outputFrame];
+    // get corner regions
+    cv::Rect leftRightCornerRegion(leftEyeRegion);
+    leftRightCornerRegion.width -= leftPupil.x;
+    leftRightCornerRegion.x += leftPupil.x;
+    leftRightCornerRegion.height /= 2;
+    leftRightCornerRegion.y += leftRightCornerRegion.height / 2;
+    cv::Rect leftLeftCornerRegion(leftEyeRegion);
+    leftLeftCornerRegion.width = leftPupil.x;
+    leftLeftCornerRegion.height /= 2;
+    leftLeftCornerRegion.y += leftLeftCornerRegion.height / 2;
+    cv::Rect rightLeftCornerRegion(rightEyeRegion);
+    rightLeftCornerRegion.width = rightPupil.x;
+    rightLeftCornerRegion.height /= 2;
+    rightLeftCornerRegion.y += rightLeftCornerRegion.height / 2;
+    cv::Rect rightRightCornerRegion(rightEyeRegion);
+    rightRightCornerRegion.width -= rightPupil.x;
+    rightRightCornerRegion.x += rightPupil.x;
+    rightRightCornerRegion.height /= 2;
+    rightRightCornerRegion.y += rightRightCornerRegion.height / 2;
+    rectangle(faceROI,leftRightCornerRegion,200);
+    rectangle(faceROI,leftLeftCornerRegion,200);
+    rectangle(faceROI,rightLeftCornerRegion,200);
+    rectangle(faceROI,rightRightCornerRegion,200);
     
-    CGFloat eyeSize = MIN(eyeSizeWidth, eyeSizeHeight);
-    CGRect eyeBallRect = CGRectMake(x, y, eyeSize, eyeSize);
-    CGContextAddEllipseInRect(context, eyeBallRect);
-    CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
-    CGContextFillPath(context);
-}
-
-- (void)effect:(SPEffect *)effect processImage:(cv::Mat&)image {
+    // change eye centers to face coordinates
+    rightPupil.x += rightEyeRegion.x;
+    rightPupil.y += rightEyeRegion.y;
+    leftPupil.x += leftEyeRegion.x;
+    leftPupil.y += leftEyeRegion.y;
+    // draw eye centers
+    circle(faceROI, rightPupil, 3, 1234);
+    circle(faceROI, leftPupil, 3, 1234);
+    
+    /*
+//    printf("Right (%d, %d), Left (%d, %d)\n", rightPupil.x, rightPupil.y, leftPupil.x, leftPupil.y);
+    //-- Find Eye Corners
+    if (self.pupilTracking.EnableEyeCorner) {
+        //        cv::Point2f leftRightCorner = findEyeCorner(faceROI(leftRightCornerRegion), true, false);
+        cv::Point2f leftRightCorner = [self.pupilTracking findEyeCorner:faceROI(leftRightCornerRegion) withLeft:true withLeft2:false];
+        leftRightCorner.x += leftRightCornerRegion.x;
+        leftRightCorner.y += leftRightCornerRegion.y;
+        cv::Point2f leftLeftCorner = [self.pupilTracking findEyeCorner:faceROI(leftLeftCornerRegion) withLeft:true withLeft2:true];
+        leftLeftCorner.x += leftLeftCornerRegion.x;
+        leftLeftCorner.y += leftLeftCornerRegion.y;
+        cv::Point2f rightLeftCorner = [self.pupilTracking findEyeCorner:faceROI(rightLeftCornerRegion) withLeft:false withLeft2:true];
+        rightLeftCorner.x += rightLeftCornerRegion.x;
+        rightLeftCorner.y += rightLeftCornerRegion.y;
+        cv::Point2f rightRightCorner = [self.pupilTracking findEyeCorner:faceROI(rightRightCornerRegion) withLeft:false withLeft2:false];
+        rightRightCorner.x += rightRightCornerRegion.x;
+        rightRightCorner.y += rightRightCornerRegion.y;
+        circle(faceROI, leftRightCorner, 3, 200);
+        circle(faceROI, leftLeftCorner, 3, 200);
+        circle(faceROI, rightLeftCorner, 3, 200);
+        circle(faceROI, rightRightCorner, 3, 200);
+    }
+    
+    
+    framesAtPosition++;
+    
+    if((NSInteger)framesAtPosition > 15) {
+        if ((rightPupil.y + leftPupil.y) / 2 > 40){
+            eyesAreTop = TRUE;
+            eyePosition = EyePositionTop;
+            //stop the camera and move to next slide
+        } else if ((rightPupil.y + leftPupil.y) / 2 < 35){
+            eyesAreTop = FALSE;
+            eyePosition = EyePositionBottom;
+        }
+        framesAtPosition = 0;
+    }
+    */
+    faceROI.copyTo(outputFrame);
     
 }
 
