@@ -23,6 +23,10 @@
 		FA0F01A31EAEF79500BB4F9F /* ObjectTrackingClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A11EAEF79500BB4F9F /* ObjectTrackingClass.cpp */; };
 		FA0F01A71EAF24CA00BB4F9F /* SPCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A61EAF24CA00BB4F9F /* SPCameraView.m */; };
 		FA0F01AA1EAF2FD000BB4F9F /* SPShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01A91EAF2FD000BB4F9F /* SPShareViewController.m */; };
+		FA2F19621EB256E20032D035 /* SPTextDetectionEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA2F19611EB256E20032D035 /* SPTextDetectionEffect.mm */; };
+		FA3038F41EB251C400B58FCA /* SPPlaneEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3038F31EB251C400B58FCA /* SPPlaneEffect.mm */; };
+		FA3038F71EB2523B00B58FCA /* SPAppleEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3038F61EB2523B00B58FCA /* SPAppleEffect.mm */; };
+		FA3E411D1EB66AA400D99CD6 /* SPGrayscaleEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3E411C1EB66AA400D99CD6 /* SPGrayscaleEffect.mm */; };
 		FA3F54CD1EA92CC100B5D692 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CC1EA92CC100B5D692 /* main.m */; };
 		FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */; };
 		FA3F54D81EA92CC100B5D692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3F54D71EA92CC100B5D692 /* Assets.xcassets */; };
@@ -80,6 +84,14 @@
 		FA0F01A61EAF24CA00BB4F9F /* SPCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCameraView.m; sourceTree = "<group>"; };
 		FA0F01A81EAF2FD000BB4F9F /* SPShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShareViewController.h; sourceTree = "<group>"; };
 		FA0F01A91EAF2FD000BB4F9F /* SPShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPShareViewController.m; sourceTree = "<group>"; };
+		FA2F19601EB256E20032D035 /* SPTextDetectionEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTextDetectionEffect.h; sourceTree = "<group>"; };
+		FA2F19611EB256E20032D035 /* SPTextDetectionEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPTextDetectionEffect.mm; sourceTree = "<group>"; };
+		FA3038F21EB251C400B58FCA /* SPPlaneEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaneEffect.h; sourceTree = "<group>"; };
+		FA3038F31EB251C400B58FCA /* SPPlaneEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPPlaneEffect.mm; sourceTree = "<group>"; };
+		FA3038F51EB2523B00B58FCA /* SPAppleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAppleEffect.h; sourceTree = "<group>"; };
+		FA3038F61EB2523B00B58FCA /* SPAppleEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPAppleEffect.mm; sourceTree = "<group>"; };
+		FA3E411B1EB66AA400D99CD6 /* SPGrayscaleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGrayscaleEffect.h; sourceTree = "<group>"; };
+		FA3E411C1EB66AA400D99CD6 /* SPGrayscaleEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPGrayscaleEffect.mm; sourceTree = "<group>"; };
 		FA3F54C81EA92CC100B5D692 /* Snap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3F54CC1EA92CC100B5D692 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA3F54CE1EA92CC100B5D692 /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
@@ -270,6 +282,8 @@
 				FAF6EEC31EAE5A6D0004EA7B /* SPInvertEffect.mm */,
 				FA0F01891EAEE7DE00BB4F9F /* SPSepiaEffect.h */,
 				FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */,
+				FA3E411B1EB66AA400D99CD6 /* SPGrayscaleEffect.h */,
+				FA3E411C1EB66AA400D99CD6 /* SPGrayscaleEffect.mm */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -292,6 +306,10 @@
 				FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */,
 				FAC9B5F61EB056230060D324 /* SPEyeDetectionApple.h */,
 				FAC9B5F71EB056230060D324 /* SPEyeDetectionApple.mm */,
+				FA3038F21EB251C400B58FCA /* SPPlaneEffect.h */,
+				FA3038F31EB251C400B58FCA /* SPPlaneEffect.mm */,
+				FA2F19601EB256E20032D035 /* SPTextDetectionEffect.h */,
+				FA2F19611EB256E20032D035 /* SPTextDetectionEffect.mm */,
 				FAC9B5FD1EB0584A0060D324 /* SPMouthDetection.h */,
 				FAC9B5FE1EB0584A0060D324 /* SPMouthDetection.mm */,
 				FAC9B6001EB05D850060D324 /* SPMouthDetection2.h */,
@@ -318,6 +336,8 @@
 				FA052F101EAEC5A2006E5FAA /* SPEffects.mm */,
 				FAF6EEBE1EAE59BE0004EA7B /* SPEffect.h */,
 				FAF6EEBF1EAE59BE0004EA7B /* SPEffect.mm */,
+				FA3038F51EB2523B00B58FCA /* SPAppleEffect.h */,
+				FA3038F61EB2523B00B58FCA /* SPAppleEffect.mm */,
 				FAF6EECB1EAE64830004EA7B /* SPNormalEffect.h */,
 				FAF6EECC1EAE64830004EA7B /* SPNormalEffect.mm */,
 				FAF6EEC51EAE5D7F0004EA7B /* SPTextEffect.h */,
@@ -465,14 +485,18 @@
 				FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */,
 				FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */,
 				FA0F01AA1EAF2FD000BB4F9F /* SPShareViewController.m in Sources */,
+				FA3038F41EB251C400B58FCA /* SPPlaneEffect.mm in Sources */,
 				FA0F01A71EAF24CA00BB4F9F /* SPCameraView.m in Sources */,
 				FA052F081EAEBD61006E5FAA /* SPCarouselViewController.m in Sources */,
+				FA3E411D1EB66AA400D99CD6 /* SPGrayscaleEffect.mm in Sources */,
 				FAF6EEC01EAE59BE0004EA7B /* SPEffect.mm in Sources */,
 				FA052F111EAEC5A2006E5FAA /* SPEffects.mm in Sources */,
+				FA3038F71EB2523B00B58FCA /* SPAppleEffect.mm in Sources */,
 				FA0F01971EAEF28E00BB4F9F /* SPEyeDetection.mm in Sources */,
 				FAF6EEC71EAE5D7F0004EA7B /* SPTextEffect.mm in Sources */,
 				FA052F0E1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m in Sources */,
 				FAF072291EAF9B29004060F7 /* SPShareView.m in Sources */,
+				FA2F19621EB256E20032D035 /* SPTextDetectionEffect.mm in Sources */,
 				FA0F019D1EAEF4B700BB4F9F /* SPFeatureDetection.mm in Sources */,
 				FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */,
 				FAF6EECD1EAE64830004EA7B /* SPNormalEffect.mm in Sources */,

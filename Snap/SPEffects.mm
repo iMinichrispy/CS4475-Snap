@@ -22,6 +22,8 @@
 #import "SPObjectDetection.h"
 #import "SPMouthDetection.h"
 #import "SPMouthDetection2.h"
+#import "SPPlaneEffect.h"
+#import "SPTextDetectionEffect.h"
 
 @implementation SPEffects
 
@@ -38,6 +40,8 @@ static NSArray<Class> *__effectsClasses = @[
     [SPEyeDetectionApple class],
     [SPMouthDetection class],
     [SPMouthDetection2 class],
+    [SPPlaneEffect class],
+    [SPTextDetectionEffect class],
 ];
 
 #pragma mark - Getters
