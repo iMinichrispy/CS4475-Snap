@@ -69,14 +69,15 @@ typedef NS_ENUM(NSInteger, EyePosition) {
     
     for (int i = 0; i < faces.size(); i++)
     {
-                cv::Point pt1(faces[i].x + faces[i].width, faces[i].y + faces[i].height);
-                cv::Point pt2(faces[i].x, faces[i].y);
+        cv::Point pt1(faces[i].x + faces[i].width, faces[i].y + faces[i].height);
+        cv::Point pt2(faces[i].x, faces[i].y);
         
-        cv::rectangle(image, faces[i], 1234);
+//        Scalar(B,G,R);
+        cv::rectangle(image, faces[i], cv::Scalar(0, 0, 255), 3);
     }
     if (faces.size() > 0) {
         
-        [self findEyes:grayscaleFrame withFace:faces[0] output:image];
+//        [self findEyes:grayscaleFrame withFace:faces[0] output:image];
     }
 }
 
