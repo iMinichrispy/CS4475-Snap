@@ -64,6 +64,7 @@
 
 - (void)share:(UIButton *)sender {
     if (_image) {
+        _shareResult = SPShareResultShared;
         UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:@[_image] applicationActivities:nil];
         [self presentViewController:activityController animated:YES completion:nil];
     }
