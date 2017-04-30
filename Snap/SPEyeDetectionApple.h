@@ -6,8 +6,8 @@
 //  Copyright © 2017 Alex Perez. All rights reserved.
 //
 
-#import "SPEffect.h"
+#import "SPAppleEffect.h"
 
-@interface SPEyeDetectionApple : SPEffect
+@interface SPEyeDetectionApple : SPAppleEffect
 
 @end

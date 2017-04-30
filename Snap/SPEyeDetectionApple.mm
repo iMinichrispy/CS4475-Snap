@@ -20,6 +20,10 @@ const CGFloat kFaceBoundsToEyeScaleFactor = 4.0f;
     return @"Eyes2";
 }
 
+- (NSString *)type {
+    return CIDetectorTypeFace;
+}
+
 - (void)processImage:(cv::Mat&)image {
     UIImage *featureImage = [self imageForFrame:image];
     cv::Mat newImage = [SPOpenCVHelper cvMatFromUIImage:featureImage];
@@ -29,13 +33,10 @@ const CGFloat kFaceBoundsToEyeScaleFactor = 4.0f;
 - (UIImage *)imageForFrame:(const cv::Mat&)frame {
     UIImage *image = [super imageForFrame:frame];
     
-    CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
-                                              context:nil
-                                              options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];
     // Get features from the image
     CIImage* newImage = [CIImage imageWithCGImage:image.CGImage];
     
-    NSArray *features = [detector featuresInImage:newImage];
+    NSArray<CIFeature *> *features = [self.detector featuresInImage:newImage];
     
     UIGraphicsBeginImageContext(image.size);
     CGRect imageRect = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
@@ -48,6 +49,10 @@ const CGFloat kFaceBoundsToEyeScaleFactor = 4.0f;
     for (CIFaceFeature *faceFeature in features) {
         CGRect faceRect = [faceFeature bounds];
         CGContextSaveGState(context);
+        
+        CGContextSetLineWidth(context, 3.0f);
+        CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
+        CGContextStrokeRect(context, faceRect);
         
         // CI and CG work in different coordinate systems, we should translate to
         // the correct one so we don't get mixed up when calculating the face position.
