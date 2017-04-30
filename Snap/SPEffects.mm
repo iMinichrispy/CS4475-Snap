@@ -13,6 +13,7 @@
 #import "SPTextEffect.h"
 #import "SPNormalEffect.h"
 #import "SPSepiaEffect.h"
+#import "SPGrayscaleEffect.h"
 #import "SPEdgeDetection.h"
 #import "SPContourDetection.h"
 #import "SPEyeDetection.h"
@@ -28,6 +29,7 @@ static NSArray<Class> *__effectsClasses = @[
     [SPNormalEffect class],
     [SPInvertEffect class],
     [SPSepiaEffect class],
+    [SPGrayscaleEffect class],
     [SPEdgeDetection class],
     [SPContourDetection class],
     [SPFeatureDetection class],
