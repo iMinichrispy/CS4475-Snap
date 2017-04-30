@@ -9,6 +9,8 @@
 #import "SPEyeDetection.h"
 
 #import "PupilTracking.h"
+#include "ObjectTrackingClass.h"
+#import "SPOpenCVHelper.h"
 
 const int HaarOptions = CV_HAAR_FIND_BIGGEST_OBJECT | CV_HAAR_DO_ROUGH_SEARCH;
 
@@ -29,6 +31,28 @@ typedef NS_ENUM(NSInteger, EyePosition) {
     BOOL eyesAreTop;
     NSInteger * framesAtPosition;
     cv::CascadeClassifier faceCascade;
+    
+    
+    
+    // object detection
+    cv::Mat imageNext, imagePrev;
+    
+    std::vector<uchar> status;
+    
+    std::vector<float> err;
+    
+    std::string m_algorithmName;
+    
+    std::vector<cv::Point2f> pointsPrev, pointsNext;
+    
+    // optical flow options
+    int m_maxCorners;
+    
+    bool computeObject;
+    bool detectObject;
+    bool trackObject;
+    
+    bool tracking;
 }
 
 - (instancetype)init {
@@ -42,6 +66,9 @@ typedef NS_ENUM(NSInteger, EyePosition) {
         if (!faceCascade.load([faceCascadePath UTF8String])) {
             NSLog(@"Error loading face cascade");
         }
+        
+        m_algorithmName = "LKT";
+        m_maxCorners = 200;
     }
     return self;
 }
@@ -50,11 +77,23 @@ typedef NS_ENUM(NSInteger, EyePosition) {
     return @"Eyes";
 }
 
+- (void)handleTouchFrame:(const cv::Mat&)frame {
+    getGray(frame, imagePrev);
+    computeObject = true;
+}
+
 - (void)start {
     [self.pupilTracking releaseCornerKernels];
     self.pupilTracking = [PupilTracking alloc];
     [self.pupilTracking initialiseVars];
     [self.pupilTracking createCornerKernels];
+}
+
+- (void)stop {
+    computeObject = false;
+    detectObject = false;
+    trackObject = false;
+    tracking = false;
 }
 
 - (void)processImage:(cv::Mat&)image {
@@ -76,7 +115,68 @@ typedef NS_ENUM(NSInteger, EyePosition) {
         cv::rectangle(image, faces[i], cv::Scalar(0, 0, 255), 3);
     }
     if (faces.size() > 0) {
+        if (!imagePrev.empty() && !tracking) {
+            [self handleTouchFrame:imagePrev];
+            tracking = true;
+        }
         
+        // display the frame
+        image.copyTo(image);
+        
+        // convert input frame to gray scale
+        getGray(image, imageNext);
+        
+        // prepare the tracking class
+        ObjectTrackingClass ot;
+        ot.setMaxCorners(m_maxCorners);
+        
+#if DEBUG
+        cv::Rect faceRect = faces[0];
+#else
+        cv::Rect faceRect = Rect(0,0,0,0);
+#endif
+        
+        // begin tracking object
+        if ( trackObject ) {
+            ot.track(image,
+                     imagePrev,
+                     imageNext,
+                     pointsPrev,
+                     pointsNext,
+                     status,
+                     err,
+                     faceRect);
+            
+            size_t i, k;
+            for( i = k = 0; i < pointsNext.size(); i++ )
+            {
+                if( !status[i] )
+                    continue;
+                
+                cv::Point2f point = pointsNext[i];
+                
+                
+            }
+            
+            // check if the next points array isn't empty
+            if ( pointsNext.empty() )
+                trackObject = false;
+        }
+        
+        // store the reference frame as the object to track
+        if ( computeObject ) {
+            ot.init(image, imagePrev, pointsNext);
+            trackObject = true;
+            computeObject = false;
+        }
+        
+        // backup previous frame
+        imageNext.copyTo(imagePrev);
+        
+        // backup points array
+        std::swap(pointsNext, pointsPrev);
+        
+//
 //        [self findEyes:grayscaleFrame withFace:faces[0] output:image];
     }
 }

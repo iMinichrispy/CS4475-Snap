@@ -58,7 +58,8 @@ void ObjectTrackingClass::track(cv::Mat& image, // output image
                                 std::vector<cv::Point2f>& points1, // previous points 
                                 std::vector<cv::Point2f>& points2, // next points
                                 std::vector<uchar>& status, // status array
-                                std::vector<float>& err) // error array
+                                std::vector<float>& err, // error array
+                                cv::Rect bounds)
 {
     // tracking code
     cv::calcOpticalFlowPyrLK(image1,
@@ -93,17 +94,25 @@ void ObjectTrackingClass::track(cv::Mat& image, // output image
         max.y = Max(max.y, points2[i].y);
         
         // draw points
-        cv::circle( image, points2[i], 3, cv::Scalar(0,255,0), -1, 8);
+        if (bounds.area() > 0) {
+            if (bounds.contains(points2[i])) {
+                cv::circle( image, points2[i], 3, cv::Scalar(0,255,0), -1, 8);
+            }
+        } else {
+            cv::circle( image, points2[i], 3, cv::Scalar(0,255,0), -1, 8);
+        }
     }
     points2.resize(k);
     
     // Draw lines between the extreme points (square)
-    cv::Point2f point0(min.x, min.y);
-    cv::Point2f point1(max.x, min.y);
-    cv::Point2f point2(max.x, max.y);
-    cv::Point2f point3(min.x, max.y);
-    cv::line( image, point0, point1, cv::Scalar( 0, 255, 0 ), 4 );
-    cv::line( image, point1, point2, cv::Scalar( 0, 255, 0 ), 4 );
-    cv::line( image, point2, point3, cv::Scalar( 0, 255, 0 ), 4 );
-    cv::line( image, point3, point0, cv::Scalar( 0, 255, 0 ), 4 );
+    if (bounds.area() == 0) {
+        cv::Point2f point0(min.x, min.y);
+        cv::Point2f point1(max.x, min.y);
+        cv::Point2f point2(max.x, max.y);
+        cv::Point2f point3(min.x, max.y);
+        cv::line( image, point0, point1, cv::Scalar( 0, 255, 0 ), 4 );
+        cv::line( image, point1, point2, cv::Scalar( 0, 255, 0 ), 4 );
+        cv::line( image, point2, point3, cv::Scalar( 0, 255, 0 ), 4 );
+        cv::line( image, point3, point0, cv::Scalar( 0, 255, 0 ), 4 );
+    }
 }

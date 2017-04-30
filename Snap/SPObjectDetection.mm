@@ -85,7 +85,8 @@
                  pointsPrev,
                  pointsNext,
                  status,
-                 err);
+                 err,
+                 cv::Rect(0,0,0,0));
         
         // check if the next points array isn't empty
         if ( pointsNext.empty() )

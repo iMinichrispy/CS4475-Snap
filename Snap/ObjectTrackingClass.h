@@ -57,7 +57,8 @@ public:
                std::vector<cv::Point2f>& points1, // points array 1
                std::vector<cv::Point2f>& points2, // points array 2
                std::vector<uchar>& status, // status array
-               std::vector<float>& err); // error array
+               std::vector<float>& err, // error array
+               cv::Rect bounds);
 };
 
 #endif

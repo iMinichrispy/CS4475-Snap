@@ -27,6 +27,8 @@
 		FA3038F41EB251C400B58FCA /* SPPlaneEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3038F31EB251C400B58FCA /* SPPlaneEffect.mm */; };
 		FA3038F71EB2523B00B58FCA /* SPAppleEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3038F61EB2523B00B58FCA /* SPAppleEffect.mm */; };
 		FA3E411D1EB66AA400D99CD6 /* SPGrayscaleEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3E411C1EB66AA400D99CD6 /* SPGrayscaleEffect.mm */; };
+		FA3E411F1EB6735B00D99CD6 /* haarcascade_eye_tree_eyeglasses.xml in Resources */ = {isa = PBXBuildFile; fileRef = FA3E411E1EB6735B00D99CD6 /* haarcascade_eye_tree_eyeglasses.xml */; };
+		FA3E41211EB6755500D99CD6 /* Mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = FA3E41201EB6755500D99CD6 /* Mouth.xml */; };
 		FA3F54CD1EA92CC100B5D692 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CC1EA92CC100B5D692 /* main.m */; };
 		FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54CF1EA92CC100B5D692 /* SPAppDelegate.m */; };
 		FA3F54D81EA92CC100B5D692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3F54D71EA92CC100B5D692 /* Assets.xcassets */; };
@@ -92,6 +94,8 @@
 		FA3038F61EB2523B00B58FCA /* SPAppleEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPAppleEffect.mm; sourceTree = "<group>"; };
 		FA3E411B1EB66AA400D99CD6 /* SPGrayscaleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGrayscaleEffect.h; sourceTree = "<group>"; };
 		FA3E411C1EB66AA400D99CD6 /* SPGrayscaleEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPGrayscaleEffect.mm; sourceTree = "<group>"; };
+		FA3E411E1EB6735B00D99CD6 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
+		FA3E41201EB6755500D99CD6 /* Mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Mouth.xml; sourceTree = "<group>"; };
 		FA3F54C81EA92CC100B5D692 /* Snap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3F54CC1EA92CC100B5D692 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA3F54CE1EA92CC100B5D692 /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				FAF0723F1EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml */,
+				FA3E411E1EB6735B00D99CD6 /* haarcascade_eye_tree_eyeglasses.xml */,
+				FA3E41201EB6755500D99CD6 /* Mouth.xml */,
 				FAC9B6031EB05EC80060D324 /* Nose.xml */,
 				FA3F54D71EA92CC100B5D692 /* Assets.xcassets */,
 				FA3F54D91EA92CC100B5D692 /* LaunchScreen.storyboard */,
@@ -413,8 +419,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3E411F1EB6735B00D99CD6 /* haarcascade_eye_tree_eyeglasses.xml in Resources */,
 				FA3F54DB1EA92CC100B5D692 /* LaunchScreen.storyboard in Resources */,
 				FA3F54D81EA92CC100B5D692 /* Assets.xcassets in Resources */,
+				FA3E41211EB6755500D99CD6 /* Mouth.xml in Resources */,
 				FAC9B6041EB05EC80060D324 /* Nose.xml in Resources */,
 				FAF072401EAFCA31004060F7 /* haarcascade_frontalface_alt2.xml in Resources */,
 			);
