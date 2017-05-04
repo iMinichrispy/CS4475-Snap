@@ -16,14 +16,21 @@
 #import "SPGrayscaleEffect.h"
 #import "SPEdgeDetection.h"
 #import "SPContourDetection.h"
-#import "SPEyeDetection.h"
-#import "SPEyeDetectionApple.h"
+#import "SPFaceFeaturesDetection.h"
+#import "SPFaceFeaturesDetectionApple.h"
 #import "SPFeatureDetection.h"
 #import "SPObjectDetection.h"
 #import "SPMouthDetection.h"
-#import "SPMouthDetection2.h"
+#import "SPFaceFeaturesDetectionApple.h"
 #import "SPPlaneEffect.h"
 #import "SPTextDetectionEffect.h"
+#import "SPEmojiEffectApple.h"
+#import "SPEmojiEffectJumpApple.h"
+#import "SPFaceEffect.h"
+#import "SPFaceEffectApple.h"
+#import "SPOldEffectApple.h"
+#import "SPCoolEffect.h"
+#import "SPMusicEffect.h"
 
 @implementation SPEffects
 
@@ -36,12 +43,16 @@ static NSArray<Class> *__effectsClasses = @[
     [SPContourDetection class],
     [SPFeatureDetection class],
     [SPObjectDetection class],
-    [SPEyeDetection class],
-    [SPEyeDetectionApple class],
-    [SPMouthDetection class],
-    [SPMouthDetection2 class],
-    [SPPlaneEffect class],
-    [SPTextDetectionEffect class],
+    [SPFaceEffect class],
+    [SPFaceEffectApple class],
+    [SPFaceFeaturesDetectionApple class],
+    [SPEmojiEffectJumpApple class],
+    [SPEmojiEffectApple class],
+    [SPFaceFeaturesDetection class],
+    
+    [SPCoolEffect class],
+    [SPOldEffectApple class],
+//    [SPMusicEffect class],
 ];
 
 #pragma mark - Getters

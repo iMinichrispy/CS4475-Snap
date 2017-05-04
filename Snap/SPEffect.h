@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SPEffect : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *tagline;
 @property (nonatomic, strong, nullable) NSString *prompt;
 
 @property (nonatomic, assign) BOOL shouldHandleTouch;

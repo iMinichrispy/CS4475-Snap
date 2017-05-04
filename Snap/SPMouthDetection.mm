@@ -8,47 +8,84 @@
 
 #import "SPMouthDetection.h"
 
-const int HaarOptions = CV_HAAR_FIND_BIGGEST_OBJECT | CV_HAAR_DO_ROUGH_SEARCH | CV_HAAR_SCALE_IMAGE;
+#include <iostream>
+//#import <OpenFace/FaceDetect.h>
+
+//const int HaarOptions = CV_HAAR_FIND_BIGGEST_OBJECT | CV_HAAR_DO_ROUGH_SEARCH | CV_HAAR_SCALE_IMAGE;
 
 @implementation SPMouthDetection {
     cv::CascadeClassifier faceCascade;
     cv::CascadeClassifier eyesCascade;
     cv::CascadeClassifier noseCascade;
     cv::CascadeClassifier mouthCascade;
+    int frame_count;
+//    FaceDetect *_facear;
 }
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        NSString* faceCascadePath = [[NSBundle mainBundle] pathForResource:@"haarcascade_frontalface_alt2" ofType:@"xml"];
-        if (!faceCascade.load([faceCascadePath UTF8String])) {
-            NSLog(@"Error loading face cascade");
-        }
+//        NSString* faceCascadePath = [[NSBundle mainBundle] pathForResource:@"haarcascade_frontalface_alt2" ofType:@"xml"];
+//        if (!faceCascade.load([faceCascadePath UTF8String])) {
+//            NSLog(@"Error loading face cascade");
+//        }
+//        
+//        NSString* eyesPath = [[NSBundle mainBundle] pathForResource:@"haarcascade_eye_tree_eyeglasses" ofType:@"xml"];
+//        if (!eyesCascade.load([eyesPath UTF8String])) {
+//            NSLog(@"Error loading eyes cascade");
+//        }
+//        
+//        NSString* nosePath = [[NSBundle mainBundle] pathForResource:@"Nose" ofType:@"xml"];
+//        if (!noseCascade.load([nosePath UTF8String])) {
+//            NSLog(@"Error loading nose cascade");
+//        }
+//
+//    
+//        NSString* mouthPath = [[NSBundle mainBundle] pathForResource:@"Mouth" ofType:@"xml"];
+//        if (!mouthCascade.load([mouthPath UTF8String])) {
+//            NSLog(@"Error loading mouth cascade");
+//        }
         
-        NSString* eyesPath = [[NSBundle mainBundle] pathForResource:@"haarcascade_eye_tree_eyeglasses" ofType:@"xml"];
-        if (!eyesCascade.load([eyesPath UTF8String])) {
-            NSLog(@"Error loading eyes cascade");
-        }
-        
-        NSString* nosePath = [[NSBundle mainBundle] pathForResource:@"Nose" ofType:@"xml"];
-        if (!noseCascade.load([nosePath UTF8String])) {
-            NSLog(@"Error loading nose cascade");
-        }
-
-    
-        NSString* mouthPath = [[NSBundle mainBundle] pathForResource:@"Mouth" ofType:@"xml"];
-        if (!mouthCascade.load([mouthPath UTF8String])) {
-            NSLog(@"Error loading mouth cascade");
-        }
+//        _facear = [[FaceDetect alloc] init];
     }
     return self;
 }
 
 - (NSString *)name {
-    return @"Mouth";
+    return @"Mouth?";
 }
 
-- (void)processImage:(cv::Mat&)frame {
+- (NSString *)tagline {
+    return @"OpenCV";
+}
+
+- (void)processImage:(cv::Mat&)image {
+//    cv::Mat targetImage(image.cols,image.rows,CV_8UC3);
+//    cv::cvtColor(image, targetImage, cv::COLOR_BGRA2BGR);
+//    if(targetImage.empty()){
+//        std::cout << "targetImage empty" << std::endl;
+//    }
+//    else
+//    {
+//        float fx, fy, cx, cy;
+//        cx = 1.0*targetImage.cols / 2.0;
+//        cy = 1.0*targetImage.rows / 2.0;
+//        
+//        fx = 500 * (targetImage.cols / 640.0);
+//        fy = 500 * (targetImage.rows / 480.0);
+//        
+//        fx = (fx + fy) / 2.0;
+//        fy = fx;
+//        
+//        [_facear run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
+//        frame_count = frame_count + 1;
+//    }
+//    cv::cvtColor(targetImage, image, cv::COLOR_BGRA2RGB);
+    
+    
+    
+    
+    /*
     std::vector<cv::Rect> faces;
     cv::Mat grayframe;
     
@@ -69,7 +106,7 @@ const int HaarOptions = CV_HAAR_FIND_BIGGEST_OBJECT | CV_HAAR_DO_ROUGH_SEARCH | 
             cv::Point pt2(pt1.x+mouthi[0].width, pt1.y+mouthi[0].height);
             cv::rectangle(frame, pt1,pt2,cv::Scalar(255,0,0),1,8,0);
         }
-    }
+    }*/
 
     /*
     std::vector<cv::Rect> faces;

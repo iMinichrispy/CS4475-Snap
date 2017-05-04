@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         _retunsSubFeatures = NO;
-        _detector = [CIDetector detectorOfType:self.type context:nil options:@{CIDetectorAccuracy: self.accuracy, CIDetectorReturnSubFeatures: @YES}];//@(self.retunsSubFeatures)}];
+        _detector = [CIDetector detectorOfType:self.type context:nil options:@{CIDetectorAccuracy: self.accuracy, CIDetectorReturnSubFeatures: @(self.retunsSubFeatures), CIDetectorSmile: @(self.detectsSmile), CIDetectorEyeBlink: @(self.detectsSmile)}];
     }
     return self;
 }

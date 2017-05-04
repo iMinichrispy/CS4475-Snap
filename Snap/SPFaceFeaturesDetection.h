@@ -8,6 +8,6 @@
 
 #import "SPEffect.h"
 
-@interface SPEyeDetection : SPEffect
+@interface SPFaceFeaturesDetection : SPEffect
 
 @end

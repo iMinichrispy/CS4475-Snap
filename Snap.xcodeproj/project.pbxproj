@@ -12,11 +12,9 @@
 		FA052F0B1EAEBD7B006E5FAA /* SPCarouselViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052F0A1EAEBD7B006E5FAA /* SPCarouselViewCell.m */; };
 		FA052F0E1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052F0D1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m */; };
 		FA052F111EAEC5A2006E5FAA /* SPEffects.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA052F101EAEC5A2006E5FAA /* SPEffects.mm */; };
-		FA0941751EB14BFA00B3100B /* PupilTracking.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA09416F1EB14BFA00B3100B /* PupilTracking.mm */; };
 		FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */; };
 		FA0F01911EAEECCB00BB4F9F /* SPEdgeDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01901EAEECCB00BB4F9F /* SPEdgeDetection.mm */; };
 		FA0F01941EAEEDC200BB4F9F /* cvneon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01921EAEEDC200BB4F9F /* cvneon.cpp */; };
-		FA0F01971EAEF28E00BB4F9F /* SPEyeDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */; };
 		FA0F019A1EAEF30A00BB4F9F /* SPContourDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F01991EAEF30A00BB4F9F /* SPContourDetection.mm */; };
 		FA0F019D1EAEF4B700BB4F9F /* SPFeatureDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F019C1EAEF4B700BB4F9F /* SPFeatureDetection.mm */; };
 		FA0F01A01EAEF6F200BB4F9F /* SPObjectDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA0F019F1EAEF6F200BB4F9F /* SPObjectDetection.mm */; };
@@ -35,9 +33,17 @@
 		FA3F54DB1EA92CC100B5D692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3F54D91EA92CC100B5D692 /* LaunchScreen.storyboard */; };
 		FA3F54E41EA92D2A00B5D692 /* SPHomeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */; };
 		FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F54E61EA936D000B5D692 /* SPCameraButton.m */; };
-		FAC9B5F81EB056230060D324 /* SPEyeDetectionApple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B5F71EB056230060D324 /* SPEyeDetectionApple.mm */; };
+		FAB731B91EBA729F006ABA2E /* SPEmojiEffectApple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731B81EBA729F006ABA2E /* SPEmojiEffectApple.mm */; };
+		FAB731BC1EBAB78D006ABA2E /* SPFaceEffectApple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731BB1EBAB78D006ABA2E /* SPFaceEffectApple.mm */; };
+		FAB731BF1EBAB79B006ABA2E /* SPFaceEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731BE1EBAB79B006ABA2E /* SPFaceEffect.mm */; };
+		FAB731C31EBAC497006ABA2E /* SPOldEffectApple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731C21EBAC497006ABA2E /* SPOldEffectApple.mm */; };
+		FAB731C61EBAC629006ABA2E /* SPCoolEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731C51EBAC628006ABA2E /* SPCoolEffect.mm */; };
+		FAB731C91EBB5FE0006ABA2E /* SPEmojiEffectJumpApple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731C81EBB5FE0006ABA2E /* SPEmojiEffectJumpApple.mm */; };
+		FAB731CC1EBB6018006ABA2E /* SPRectOperations.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731CB1EBB6018006ABA2E /* SPRectOperations.mm */; };
+		FAB731CF1EBB7569006ABA2E /* SPMusicEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731CE1EBB7569006ABA2E /* SPMusicEffect.mm */; };
+		FAB731D21EBB77A2006ABA2E /* SPFaceFeaturesDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731D11EBB77A2006ABA2E /* SPFaceFeaturesDetection.mm */; };
+		FAC9B5F81EB056230060D324 /* SPFaceFeaturesDetectionApple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B5F71EB056230060D324 /* SPFaceFeaturesDetectionApple.mm */; };
 		FAC9B5FF1EB0584A0060D324 /* SPMouthDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B5FE1EB0584A0060D324 /* SPMouthDetection.mm */; };
-		FAC9B6021EB05D850060D324 /* SPMouthDetection2.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B6011EB05D850060D324 /* SPMouthDetection2.mm */; };
 		FAC9B6041EB05EC80060D324 /* Nose.xml in Resources */ = {isa = PBXBuildFile; fileRef = FAC9B6031EB05EC80060D324 /* Nose.xml */; };
 		FAF072291EAF9B29004060F7 /* SPShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF072281EAF9B29004060F7 /* SPShareView.m */; };
 		FAF0722C1EAFA862004060F7 /* UIImage+SPCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */; };
@@ -52,6 +58,19 @@
 		FAF6EECD1EAE64830004EA7B /* SPNormalEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EECC1EAE64830004EA7B /* SPNormalEffect.mm */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FA3E42BE1EB6816200D99CD6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		931F5FB7B930F0F0E46EDD1D /* Pods-Snap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snap/Pods-Snap.release.xcconfig"; sourceTree = "<group>"; };
 		D5F285E982EF619F61AA4DEA /* Pods_Snap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,16 +83,12 @@
 		FA052F0D1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCarouselViewFlowLayout.m; sourceTree = "<group>"; };
 		FA052F0F1EAEC5A2006E5FAA /* SPEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEffects.h; sourceTree = "<group>"; };
 		FA052F101EAEC5A2006E5FAA /* SPEffects.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEffects.mm; sourceTree = "<group>"; };
-		FA09416E1EB14BFA00B3100B /* PupilTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PupilTracking.h; sourceTree = "<group>"; };
-		FA09416F1EB14BFA00B3100B /* PupilTracking.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PupilTracking.mm; sourceTree = "<group>"; };
 		FA0F01891EAEE7DE00BB4F9F /* SPSepiaEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSepiaEffect.h; sourceTree = "<group>"; };
 		FA0F018A1EAEE7DE00BB4F9F /* SPSepiaEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPSepiaEffect.mm; sourceTree = "<group>"; };
 		FA0F018F1EAEECCB00BB4F9F /* SPEdgeDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEdgeDetection.h; sourceTree = "<group>"; };
 		FA0F01901EAEECCB00BB4F9F /* SPEdgeDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEdgeDetection.mm; sourceTree = "<group>"; };
 		FA0F01921EAEEDC200BB4F9F /* cvneon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cvneon.cpp; sourceTree = "<group>"; };
 		FA0F01931EAEEDC200BB4F9F /* cvneon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvneon.h; sourceTree = "<group>"; };
-		FA0F01951EAEF28E00BB4F9F /* SPEyeDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEyeDetection.h; sourceTree = "<group>"; };
-		FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEyeDetection.mm; sourceTree = "<group>"; };
 		FA0F01981EAEF30A00BB4F9F /* SPContourDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPContourDetection.h; sourceTree = "<group>"; };
 		FA0F01991EAEF30A00BB4F9F /* SPContourDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPContourDetection.mm; sourceTree = "<group>"; };
 		FA0F019B1EAEF4B700BB4F9F /* SPFeatureDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFeatureDetection.h; sourceTree = "<group>"; };
@@ -107,12 +122,28 @@
 		FA3F54E31EA92D2A00B5D692 /* SPHomeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPHomeViewController.mm; sourceTree = "<group>"; };
 		FA3F54E51EA936D000B5D692 /* SPCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCameraButton.h; sourceTree = "<group>"; };
 		FA3F54E61EA936D000B5D692 /* SPCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCameraButton.m; sourceTree = "<group>"; };
-		FAC9B5F61EB056230060D324 /* SPEyeDetectionApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEyeDetectionApple.h; sourceTree = "<group>"; };
-		FAC9B5F71EB056230060D324 /* SPEyeDetectionApple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEyeDetectionApple.mm; sourceTree = "<group>"; };
+		FAB731B71EBA729F006ABA2E /* SPEmojiEffectApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEmojiEffectApple.h; sourceTree = "<group>"; };
+		FAB731B81EBA729F006ABA2E /* SPEmojiEffectApple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEmojiEffectApple.mm; sourceTree = "<group>"; };
+		FAB731BA1EBAB78D006ABA2E /* SPFaceEffectApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFaceEffectApple.h; sourceTree = "<group>"; };
+		FAB731BB1EBAB78D006ABA2E /* SPFaceEffectApple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPFaceEffectApple.mm; sourceTree = "<group>"; };
+		FAB731BD1EBAB79B006ABA2E /* SPFaceEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFaceEffect.h; sourceTree = "<group>"; };
+		FAB731BE1EBAB79B006ABA2E /* SPFaceEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPFaceEffect.mm; sourceTree = "<group>"; };
+		FAB731C11EBAC497006ABA2E /* SPOldEffectApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOldEffectApple.h; sourceTree = "<group>"; };
+		FAB731C21EBAC497006ABA2E /* SPOldEffectApple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPOldEffectApple.mm; sourceTree = "<group>"; };
+		FAB731C41EBAC628006ABA2E /* SPCoolEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCoolEffect.h; sourceTree = "<group>"; };
+		FAB731C51EBAC628006ABA2E /* SPCoolEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPCoolEffect.mm; sourceTree = "<group>"; };
+		FAB731C71EBB5FE0006ABA2E /* SPEmojiEffectJumpApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEmojiEffectJumpApple.h; sourceTree = "<group>"; };
+		FAB731C81EBB5FE0006ABA2E /* SPEmojiEffectJumpApple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPEmojiEffectJumpApple.mm; sourceTree = "<group>"; };
+		FAB731CA1EBB6018006ABA2E /* SPRectOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPRectOperations.h; sourceTree = "<group>"; };
+		FAB731CB1EBB6018006ABA2E /* SPRectOperations.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPRectOperations.mm; sourceTree = "<group>"; };
+		FAB731CD1EBB7569006ABA2E /* SPMusicEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMusicEffect.h; sourceTree = "<group>"; };
+		FAB731CE1EBB7569006ABA2E /* SPMusicEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPMusicEffect.mm; sourceTree = "<group>"; };
+		FAB731D01EBB77A2006ABA2E /* SPFaceFeaturesDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFaceFeaturesDetection.h; sourceTree = "<group>"; };
+		FAB731D11EBB77A2006ABA2E /* SPFaceFeaturesDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPFaceFeaturesDetection.mm; sourceTree = "<group>"; };
+		FAC9B5F61EB056230060D324 /* SPFaceFeaturesDetectionApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFaceFeaturesDetectionApple.h; sourceTree = "<group>"; };
+		FAC9B5F71EB056230060D324 /* SPFaceFeaturesDetectionApple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPFaceFeaturesDetectionApple.mm; sourceTree = "<group>"; };
 		FAC9B5FD1EB0584A0060D324 /* SPMouthDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMouthDetection.h; sourceTree = "<group>"; };
 		FAC9B5FE1EB0584A0060D324 /* SPMouthDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPMouthDetection.mm; sourceTree = "<group>"; };
-		FAC9B6001EB05D850060D324 /* SPMouthDetection2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMouthDetection2.h; sourceTree = "<group>"; };
-		FAC9B6011EB05D850060D324 /* SPMouthDetection2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPMouthDetection2.mm; sourceTree = "<group>"; };
 		FAC9B6031EB05EC80060D324 /* Nose.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Nose.xml; sourceTree = "<group>"; };
 		FAF072271EAF9B29004060F7 /* SPShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShareView.h; sourceTree = "<group>"; };
 		FAF072281EAF9B29004060F7 /* SPShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPShareView.m; sourceTree = "<group>"; };
@@ -165,15 +196,6 @@
 				931F5FB7B930F0F0E46EDD1D /* Pods-Snap.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		FA0941641EB14BFA00B3100B /* eyelike */ = {
-			isa = PBXGroup;
-			children = (
-				FA09416E1EB14BFA00B3100B /* PupilTracking.h */,
-				FA09416F1EB14BFA00B3100B /* PupilTracking.mm */,
-			);
-			path = eyelike;
 			sourceTree = "<group>";
 		};
 		FA0F01821EAEC88800BB4F9F /* Carousel */ = {
@@ -245,7 +267,6 @@
 				FAF6EEBC1EAE58C50004EA7B /* SPOpenCVHelper.mm */,
 				FAF0722A1EAFA862004060F7 /* UIImage+SPCrop.h */,
 				FAF0722B1EAFA862004060F7 /* UIImage+SPCrop.m */,
-				FA0941641EB14BFA00B3100B /* eyelike */,
 				FA0F01A41EAEF79A00BB4F9F /* Other */,
 				FA3F54CB1EA92CC100B5D692 /* Supporting Files */,
 			);
@@ -281,6 +302,21 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		FAB731C01EBAC2CB006ABA2E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				FAF6EEC51EAE5D7F0004EA7B /* SPTextEffect.h */,
+				FAF6EEC61EAE5D7F0004EA7B /* SPTextEffect.mm */,
+				FA3038F21EB251C400B58FCA /* SPPlaneEffect.h */,
+				FA3038F31EB251C400B58FCA /* SPPlaneEffect.mm */,
+				FA2F19601EB256E20032D035 /* SPTextDetectionEffect.h */,
+				FA2F19611EB256E20032D035 /* SPTextDetectionEffect.mm */,
+				FAB731CA1EBB6018006ABA2E /* SPRectOperations.h */,
+				FAB731CB1EBB6018006ABA2E /* SPRectOperations.mm */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		FAC9B5F91EB058010060D324 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,18 +344,26 @@
 		FAC9B5FB1EB058260060D324 /* Face */ = {
 			isa = PBXGroup;
 			children = (
-				FA0F01951EAEF28E00BB4F9F /* SPEyeDetection.h */,
-				FA0F01961EAEF28E00BB4F9F /* SPEyeDetection.mm */,
-				FAC9B5F61EB056230060D324 /* SPEyeDetectionApple.h */,
-				FAC9B5F71EB056230060D324 /* SPEyeDetectionApple.mm */,
-				FA3038F21EB251C400B58FCA /* SPPlaneEffect.h */,
-				FA3038F31EB251C400B58FCA /* SPPlaneEffect.mm */,
-				FA2F19601EB256E20032D035 /* SPTextDetectionEffect.h */,
-				FA2F19611EB256E20032D035 /* SPTextDetectionEffect.mm */,
+				FAB731BD1EBAB79B006ABA2E /* SPFaceEffect.h */,
+				FAB731BE1EBAB79B006ABA2E /* SPFaceEffect.mm */,
+				FAB731BA1EBAB78D006ABA2E /* SPFaceEffectApple.h */,
+				FAB731BB1EBAB78D006ABA2E /* SPFaceEffectApple.mm */,
+				FAC9B5F61EB056230060D324 /* SPFaceFeaturesDetectionApple.h */,
+				FAC9B5F71EB056230060D324 /* SPFaceFeaturesDetectionApple.mm */,
+				FAB731C71EBB5FE0006ABA2E /* SPEmojiEffectJumpApple.h */,
+				FAB731C81EBB5FE0006ABA2E /* SPEmojiEffectJumpApple.mm */,
+				FAB731B71EBA729F006ABA2E /* SPEmojiEffectApple.h */,
+				FAB731B81EBA729F006ABA2E /* SPEmojiEffectApple.mm */,
+				FAB731D01EBB77A2006ABA2E /* SPFaceFeaturesDetection.h */,
+				FAB731D11EBB77A2006ABA2E /* SPFaceFeaturesDetection.mm */,
 				FAC9B5FD1EB0584A0060D324 /* SPMouthDetection.h */,
 				FAC9B5FE1EB0584A0060D324 /* SPMouthDetection.mm */,
-				FAC9B6001EB05D850060D324 /* SPMouthDetection2.h */,
-				FAC9B6011EB05D850060D324 /* SPMouthDetection2.mm */,
+				FAB731C41EBAC628006ABA2E /* SPCoolEffect.h */,
+				FAB731C51EBAC628006ABA2E /* SPCoolEffect.mm */,
+				FAB731C11EBAC497006ABA2E /* SPOldEffectApple.h */,
+				FAB731C21EBAC497006ABA2E /* SPOldEffectApple.mm */,
+				FAB731CD1EBB7569006ABA2E /* SPMusicEffect.h */,
+				FAB731CE1EBB7569006ABA2E /* SPMusicEffect.mm */,
 			);
 			name = Face;
 			sourceTree = "<group>";
@@ -346,12 +390,11 @@
 				FA3038F61EB2523B00B58FCA /* SPAppleEffect.mm */,
 				FAF6EECB1EAE64830004EA7B /* SPNormalEffect.h */,
 				FAF6EECC1EAE64830004EA7B /* SPNormalEffect.mm */,
-				FAF6EEC51EAE5D7F0004EA7B /* SPTextEffect.h */,
-				FAF6EEC61EAE5D7F0004EA7B /* SPTextEffect.mm */,
 				FAC9B5F91EB058010060D324 /* Filters */,
 				FAC9B5FA1EB058170060D324 /* Edges */,
 				FAC9B5FC1EB058330060D324 /* Features */,
 				FAC9B5FB1EB058260060D324 /* Face */,
+				FAB731C01EBAC2CB006ABA2E /* Other */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -369,6 +412,7 @@
 				FA3F54C61EA92CC100B5D692 /* Resources */,
 				9A4F6F188D3BA4A145EBD9C1 /* [CP] Embed Pods Frameworks */,
 				76F27937073D30AC80C83D8F /* [CP] Copy Pods Resources */,
+				FA3E42BE1EB6816200D99CD6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -489,10 +533,13 @@
 				FA0F01911EAEECCB00BB4F9F /* SPEdgeDetection.mm in Sources */,
 				FA3F54D01EA92CC100B5D692 /* SPAppDelegate.m in Sources */,
 				FA052F0B1EAEBD7B006E5FAA /* SPCarouselViewCell.m in Sources */,
+				FAB731C31EBAC497006ABA2E /* SPOldEffectApple.mm in Sources */,
+				FAB731B91EBA729F006ABA2E /* SPEmojiEffectApple.mm in Sources */,
 				FA3F54CD1EA92CC100B5D692 /* main.m in Sources */,
 				FAF6EEC41EAE5A6D0004EA7B /* SPInvertEffect.mm in Sources */,
 				FAF6EEBD1EAE58C50004EA7B /* SPOpenCVHelper.mm in Sources */,
 				FA0F01AA1EAF2FD000BB4F9F /* SPShareViewController.m in Sources */,
+				FAB731CC1EBB6018006ABA2E /* SPRectOperations.mm in Sources */,
 				FA3038F41EB251C400B58FCA /* SPPlaneEffect.mm in Sources */,
 				FA0F01A71EAF24CA00BB4F9F /* SPCameraView.m in Sources */,
 				FA052F081EAEBD61006E5FAA /* SPCarouselViewController.m in Sources */,
@@ -500,23 +547,26 @@
 				FAF6EEC01EAE59BE0004EA7B /* SPEffect.mm in Sources */,
 				FA052F111EAEC5A2006E5FAA /* SPEffects.mm in Sources */,
 				FA3038F71EB2523B00B58FCA /* SPAppleEffect.mm in Sources */,
-				FA0F01971EAEF28E00BB4F9F /* SPEyeDetection.mm in Sources */,
 				FAF6EEC71EAE5D7F0004EA7B /* SPTextEffect.mm in Sources */,
 				FA052F0E1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m in Sources */,
 				FAF072291EAF9B29004060F7 /* SPShareView.m in Sources */,
 				FA2F19621EB256E20032D035 /* SPTextDetectionEffect.mm in Sources */,
 				FA0F019D1EAEF4B700BB4F9F /* SPFeatureDetection.mm in Sources */,
 				FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */,
+				FAB731C91EBB5FE0006ABA2E /* SPEmojiEffectJumpApple.mm in Sources */,
 				FAF6EECD1EAE64830004EA7B /* SPNormalEffect.mm in Sources */,
 				FA0F019A1EAEF30A00BB4F9F /* SPContourDetection.mm in Sources */,
-				FA0941751EB14BFA00B3100B /* PupilTracking.mm in Sources */,
+				FAB731D21EBB77A2006ABA2E /* SPFaceFeaturesDetection.mm in Sources */,
 				FAC9B5FF1EB0584A0060D324 /* SPMouthDetection.mm in Sources */,
+				FAB731BC1EBAB78D006ABA2E /* SPFaceEffectApple.mm in Sources */,
+				FAB731CF1EBB7569006ABA2E /* SPMusicEffect.mm in Sources */,
 				FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */,
-				FAC9B6021EB05D850060D324 /* SPMouthDetection2.mm in Sources */,
+				FAB731BF1EBAB79B006ABA2E /* SPFaceEffect.mm in Sources */,
 				FA0F01941EAEEDC200BB4F9F /* cvneon.cpp in Sources */,
-				FAC9B5F81EB056230060D324 /* SPEyeDetectionApple.mm in Sources */,
+				FAC9B5F81EB056230060D324 /* SPFaceFeaturesDetectionApple.mm in Sources */,
 				FAF6EECA1EAE5FF20004EA7B /* SPFont.m in Sources */,
 				FA0F01A31EAEF79500BB4F9F /* ObjectTrackingClass.cpp in Sources */,
+				FAB731C61EBAC629006ABA2E /* SPCoolEffect.mm in Sources */,
 				FA0F01A01EAEF6F200BB4F9F /* SPObjectDetection.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +684,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = 3M2F493L45;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Snap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -649,6 +703,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = 3M2F493L45;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Snap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

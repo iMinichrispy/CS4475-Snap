@@ -11,7 +11,7 @@
 @implementation SPGrayscaleEffect
 
 - (NSString *)name {
-    return @"Grayscale";
+    return @"Gray";
 }
 
 - (void)processImage:(cv::Mat&)image {

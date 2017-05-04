@@ -13,6 +13,7 @@
 @property (nonatomic, strong, readonly) NSString *type; // default is CIDetectorTypeFace
 @property (nonatomic, strong, readonly) NSString *accuracy; //default is CIDetectorAccuracyLow
 @property (nonatomic, assign, readonly) BOOL retunsSubFeatures; // default is NO
+@property (nonatomic, assign, readonly) BOOL detectsSmile; // default is NO
 @property (nonatomic, strong, readonly) CIDetector *detector;
 
 @end

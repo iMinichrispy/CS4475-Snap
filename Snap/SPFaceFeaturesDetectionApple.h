@@ -1,5 +1,5 @@
 //
-//  SPEyeDetectionApple.h
+//  SPFaceFeaturesDetectionApple.h
 //  Snap
 //
 //  Created by Alex Perez on 4/26/17.
@@ -8,6 +8,6 @@
 
 #import "SPAppleEffect.h"
 
-@interface SPEyeDetectionApple : SPAppleEffect
+@interface SPFaceFeaturesDetectionApple : SPAppleEffect
 
 @end

@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong, readonly) CvVideoCamera *camera;
 @property (nonatomic, weak, readonly) UILabel *promptLabel;
+@property (nonatomic, weak, readonly) UILabel *taglineLabel;
 @property (nonatomic, weak, readonly) UIView *containerView;
 
 @end
@@ -67,6 +68,23 @@
         [self addSubview:promptLabel];
         _promptLabel = promptLabel;
         
+        UILabel *taglineLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label.translatesAutoresizingMaskIntoConstraints = NO;
+            label.font = [SPFont fontForTextStyle:UIFontTextStyleFootnote type:SPFontTypeBold];
+//            label.backgroundColor = [UIColor blackColor];
+            label.textAlignment = NSTextAlignmentCenter;
+            label.textColor = [UIColor whiteColor];
+            
+            label.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+            label.layer.shadowOffset = CGSizeZero;
+            label.layer.shadowOpacity = 1.0f;
+            label.layer.shadowRadius = 5.0f;
+            label;
+        });
+        [self addSubview:taglineLabel];
+        _taglineLabel = taglineLabel;
+        
         [self _setupConstraints];
         
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
@@ -83,6 +101,9 @@
         _currentEffect = currentEffect;
         
         _promptLabel.text = _currentEffect.prompt.uppercaseString;
+#if DEBUG
+        _taglineLabel.text = _currentEffect.tagline;
+#endif
         _promptLabel.hidden = NO;
         
         [previousEffect stop];
@@ -137,6 +158,11 @@
     
     [_promptLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
+    }];
+    
+    [_taglineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self).with.offset(180);
+        make.trailing.equalTo(self).with.offset(-5);
     }];
 }
 

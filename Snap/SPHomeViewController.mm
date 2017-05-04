@@ -29,7 +29,7 @@
 
 @implementation SPHomeViewController
 
-static NSInteger const SPStartingEffectIndex = 9;
+static NSInteger const SPStartingEffectIndex = 14;
 
 #pragma mark - Setters
 
