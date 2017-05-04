@@ -42,6 +42,8 @@
 		FAB731CC1EBB6018006ABA2E /* SPRectOperations.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731CB1EBB6018006ABA2E /* SPRectOperations.mm */; };
 		FAB731CF1EBB7569006ABA2E /* SPMusicEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731CE1EBB7569006ABA2E /* SPMusicEffect.mm */; };
 		FAB731D21EBB77A2006ABA2E /* SPFaceFeaturesDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731D11EBB77A2006ABA2E /* SPFaceFeaturesDetection.mm */; };
+		FAB731D51EBB796E006ABA2E /* SPBatmanEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731D41EBB796E006ABA2E /* SPBatmanEffect.mm */; };
+		FAB731D81EBB7BA7006ABA2E /* SPHarambeEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAB731D71EBB7BA7006ABA2E /* SPHarambeEffect.mm */; };
 		FAC9B5F81EB056230060D324 /* SPFaceFeaturesDetectionApple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B5F71EB056230060D324 /* SPFaceFeaturesDetectionApple.mm */; };
 		FAC9B5FF1EB0584A0060D324 /* SPMouthDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B5FE1EB0584A0060D324 /* SPMouthDetection.mm */; };
 		FAC9B6041EB05EC80060D324 /* Nose.xml in Resources */ = {isa = PBXBuildFile; fileRef = FAC9B6031EB05EC80060D324 /* Nose.xml */; };
@@ -140,6 +142,10 @@
 		FAB731CE1EBB7569006ABA2E /* SPMusicEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPMusicEffect.mm; sourceTree = "<group>"; };
 		FAB731D01EBB77A2006ABA2E /* SPFaceFeaturesDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFaceFeaturesDetection.h; sourceTree = "<group>"; };
 		FAB731D11EBB77A2006ABA2E /* SPFaceFeaturesDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPFaceFeaturesDetection.mm; sourceTree = "<group>"; };
+		FAB731D31EBB796E006ABA2E /* SPBatmanEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBatmanEffect.h; sourceTree = "<group>"; };
+		FAB731D41EBB796E006ABA2E /* SPBatmanEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPBatmanEffect.mm; sourceTree = "<group>"; };
+		FAB731D61EBB7BA7006ABA2E /* SPHarambeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHarambeEffect.h; sourceTree = "<group>"; };
+		FAB731D71EBB7BA7006ABA2E /* SPHarambeEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPHarambeEffect.mm; sourceTree = "<group>"; };
 		FAC9B5F61EB056230060D324 /* SPFaceFeaturesDetectionApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFaceFeaturesDetectionApple.h; sourceTree = "<group>"; };
 		FAC9B5F71EB056230060D324 /* SPFaceFeaturesDetectionApple.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SPFaceFeaturesDetectionApple.mm; sourceTree = "<group>"; };
 		FAC9B5FD1EB0584A0060D324 /* SPMouthDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMouthDetection.h; sourceTree = "<group>"; };
@@ -364,6 +370,10 @@
 				FAB731C21EBAC497006ABA2E /* SPOldEffectApple.mm */,
 				FAB731CD1EBB7569006ABA2E /* SPMusicEffect.h */,
 				FAB731CE1EBB7569006ABA2E /* SPMusicEffect.mm */,
+				FAB731D31EBB796E006ABA2E /* SPBatmanEffect.h */,
+				FAB731D41EBB796E006ABA2E /* SPBatmanEffect.mm */,
+				FAB731D61EBB7BA7006ABA2E /* SPHarambeEffect.h */,
+				FAB731D71EBB7BA7006ABA2E /* SPHarambeEffect.mm */,
 			);
 			name = Face;
 			sourceTree = "<group>";
@@ -551,6 +561,7 @@
 				FA052F0E1EAEBE3D006E5FAA /* SPCarouselViewFlowLayout.m in Sources */,
 				FAF072291EAF9B29004060F7 /* SPShareView.m in Sources */,
 				FA2F19621EB256E20032D035 /* SPTextDetectionEffect.mm in Sources */,
+				FAB731D81EBB7BA7006ABA2E /* SPHarambeEffect.mm in Sources */,
 				FA0F019D1EAEF4B700BB4F9F /* SPFeatureDetection.mm in Sources */,
 				FA0F018B1EAEE7DE00BB4F9F /* SPSepiaEffect.mm in Sources */,
 				FAB731C91EBB5FE0006ABA2E /* SPEmojiEffectJumpApple.mm in Sources */,
@@ -563,6 +574,7 @@
 				FA3F54E71EA936D000B5D692 /* SPCameraButton.m in Sources */,
 				FAB731BF1EBAB79B006ABA2E /* SPFaceEffect.mm in Sources */,
 				FA0F01941EAEEDC200BB4F9F /* cvneon.cpp in Sources */,
+				FAB731D51EBB796E006ABA2E /* SPBatmanEffect.mm in Sources */,
 				FAC9B5F81EB056230060D324 /* SPFaceFeaturesDetectionApple.mm in Sources */,
 				FAF6EECA1EAE5FF20004EA7B /* SPFont.m in Sources */,
 				FA0F01A31EAEF79500BB4F9F /* ObjectTrackingClass.cpp in Sources */,

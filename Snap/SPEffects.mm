@@ -31,6 +31,8 @@
 #import "SPOldEffectApple.h"
 #import "SPCoolEffect.h"
 #import "SPMusicEffect.h"
+#import "SPBatmanEffect.h"
+#import "SPHarambeEffect.h"
 
 @implementation SPEffects
 
@@ -52,6 +54,8 @@ static NSArray<Class> *__effectsClasses = @[
     
     [SPCoolEffect class],
     [SPOldEffectApple class],
+    [SPBatmanEffect class],
+    [SPHarambeEffect class],
 //    [SPMusicEffect class],
 ];
 

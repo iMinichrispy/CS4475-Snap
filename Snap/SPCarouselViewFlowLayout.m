@@ -8,7 +8,7 @@
 
 #import "SPCarouselViewFlowLayout.h"
 
-CGSize const SPCarouselViewFlowLayoutItemSize = (CGSize) { .width = 70.0f, .height = 38.0f};
+CGSize const SPCarouselViewFlowLayoutItemSize = (CGSize) { .width = 73.0f, .height = 38.0f};
 CGFloat const SPCarouselViewFlowLayoutItemSpacing = 10.0f;
 
 @implementation SPCarouselViewFlowLayout
